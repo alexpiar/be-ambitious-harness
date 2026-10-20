@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use or build on this harness, please cite it as below."
+title: "Be-Ambitious Harness: a planner / worker / verifier workflow for ambitious AI tasks"
+type: software
+authors:
+  - given-names: Alexandr
+    family-names: Chernov
+    alias: alexpr
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/alexpiar/be-ambitious-harness"
+abstract: >-
+  A Claude Code skill and plain-markdown harness that turns a task into a prompt
+  with two bars (baseline and ambitious), a cheap gate check with a pass criterion
+  fixed before it runs, and an independent verifier that never sees the worker's
+  reasoning. Ships with six scenario playbooks and an eval suite.
+keywords:
+  - claude-code
+  - claude-skill
+  - prompt-engineering
+  - ai-agents
+  - multi-agent
+  - llm-as-a-judge
+  - evaluation

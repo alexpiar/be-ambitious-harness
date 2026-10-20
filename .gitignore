@@ -1,0 +1,15 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Runtimes used by eval fixtures
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# Generated eval data (reproducible with fixtures/gen_events.py)
+evals/runs/**/*.csv
