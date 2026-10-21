@@ -1,0 +1,9 @@
+family,solo_roc_auc,solo_pr_auc
+recent_engagement,0.8964,0.3505
+overall_engagement,0.8311,0.2349
+onboarding_first14d,0.6165,0.0916
+payment_failed,0.5971,0.243
+support_ticket,0.5733,0.1265
+plan_downgrade,0.5225,0.1029
+tenure_billing,0.748,0.3077
+profile,0.5087,0.0617

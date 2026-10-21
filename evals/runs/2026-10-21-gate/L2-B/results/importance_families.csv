@@ -1,0 +1,9 @@
+family,perm_drop_pr_auc,sd,perm_drop_roc_auc,ablation_drop_pr_auc,ablation_drop_roc_auc
+payment_failed,0.2299,0.0027,0.0253,0.0506,0.0049
+recent_engagement,0.1934,0.0016,0.1672,0.057,0.0339
+support_ticket,0.054,0.0023,0.0118,0.0297,0.0039
+overall_engagement,0.0488,0.0051,0.0289,-0.0117,-0.0049
+tenure_billing,0.0462,0.0063,0.0198,0.0117,0.0011
+plan_downgrade,0.0359,0.0022,0.0032,0.0108,-0.0006
+onboarding_first14d,0.0108,0.0031,0.0037,-0.0106,-0.0036
+profile,0.009,0.0014,0.0034,-0.0197,-0.0074

@@ -1,0 +1,46 @@
+{
+  "lr_pr_auc_test": 0.5911,
+  "spearman_rank_corr_families": 0.929,
+  "table": [
+    {
+      "family": "recent_engagement",
+      "lr_perm_drop_pr_auc": 0.2796,
+      "gbm_perm_drop_pr_auc": 0.1934
+    },
+    {
+      "family": "payment_failed",
+      "lr_perm_drop_pr_auc": 0.2346,
+      "gbm_perm_drop_pr_auc": 0.2299
+    },
+    {
+      "family": "overall_engagement",
+      "lr_perm_drop_pr_auc": 0.168,
+      "gbm_perm_drop_pr_auc": 0.0488
+    },
+    {
+      "family": "support_ticket",
+      "lr_perm_drop_pr_auc": 0.0604,
+      "gbm_perm_drop_pr_auc": 0.054
+    },
+    {
+      "family": "plan_downgrade",
+      "lr_perm_drop_pr_auc": 0.0407,
+      "gbm_perm_drop_pr_auc": 0.0359
+    },
+    {
+      "family": "tenure_billing",
+      "lr_perm_drop_pr_auc": 0.0181,
+      "gbm_perm_drop_pr_auc": 0.0462
+    },
+    {
+      "family": "onboarding_first14d",
+      "lr_perm_drop_pr_auc": 0.0034,
+      "gbm_perm_drop_pr_auc": 0.0108
+    },
+    {
+      "family": "profile",
+      "lr_perm_drop_pr_auc": -0.0001,
+      "gbm_perm_drop_pr_auc": 0.009
+    }
+  ]
+}

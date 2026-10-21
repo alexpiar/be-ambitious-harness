@@ -1,0 +1,7 @@
+all features (author)                      test roc=0.9207 pr=0.5784 rec10=0.6277 | no-flow rows pr=0.2421
+minus payment_failed family, minus n_pay   test roc=0.9062 pr=0.4668 rec10=0.5783 | no-flow rows pr=0.2396
+minus pf, n_pay, plan_downgrade            test roc=0.9062 pr=0.4365 rec10=0.5740 | no-flow rows pr=0.2436
+minus pf, n_pay, dg, support_ticket        test roc=0.8985 pr=0.3544 rec10=0.5515 | no-flow rows pr=0.2494
+profile check all        inner-val PR-AUC [0.6016 0.6021 0.5998] mean 0.6012 | test PR-AUC by seed [0.5755 0.5846 0.5795] mean 0.5798
+profile check no_profile inner-val PR-AUC [0.6084 0.619  0.6148] mean 0.6141 | test PR-AUC by seed [0.5834 0.5943 0.5883] mean 0.5887
+inner-val rows 8716 positives 870 distinct churners 378

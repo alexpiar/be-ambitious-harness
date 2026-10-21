@@ -1,0 +1,22 @@
+{
+  "churners_oct_dec_test_users": 188,
+  "flagged_before_cancel_share": 0.9362,
+  "median_lead_days_flagged": 25.5,
+  "share_flagged_7d_ahead": 0.8404,
+  "share_flagged_14d_ahead": 0.6862,
+  "by_mechanism": {
+    "payment_failed": {
+      "n": 86,
+      "flagged": 0.988,
+      "median_lead": 25.5,
+      "flagged_14d_ahead": 0.767
+    },
+    "voluntary": {
+      "n": 102,
+      "flagged": 0.892,
+      "median_lead": 23.9,
+      "flagged_14d_ahead": 0.618
+    }
+  },
+  "flags_followed_by_cancel_within_60d": 0.5183
+}

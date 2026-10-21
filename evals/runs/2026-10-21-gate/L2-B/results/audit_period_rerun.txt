@@ -1,0 +1,5 @@
+неушедшие: payment 23158 payment_failed 0 plan_downgrade 0
+all сен-окт base 0.0668 roc 0.9091 pr 0.5678 recall@10 0.5873
+all ноя-дек base 0.0486 roc 0.9429 pr 0.6092 recall@10 0.7344
+prod_no_profile сен-окт base 0.0668 roc 0.9163 pr 0.5866 recall@10 0.6198
+prod_no_profile ноя-дек base 0.0486 roc 0.9508 pr 0.6317 recall@10 0.7422

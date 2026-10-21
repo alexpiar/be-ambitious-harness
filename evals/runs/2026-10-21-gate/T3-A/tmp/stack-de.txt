@@ -1,0 +1,5 @@
+      5     at buildRegionSection (src/screens/settings.js:23:18)
+      5     at buildSettingsScreen (src/screens/settings.js:11:7)
+      5     at openScreen (src/app.js:15:10)
+      5     at regionOf (src/lib/locale.js:10:19)
+      5 TypeError: Cannot read properties of undefined (reading 'toUpperCase')

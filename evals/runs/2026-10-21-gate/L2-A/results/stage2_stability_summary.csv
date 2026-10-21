@@ -1,0 +1,11 @@
+segment,n,pos,auc_oof,top5,top5_overlap,spearman_vs_holdout
+fold0,960,257,0.7073,"days_since_last_event, active_days, n_support_ticket, had_downgrade, country",4,0.509
+fold1,960,257,0.6944,"days_since_last_event, n_support_ticket, active_days, had_downgrade, days_to_first_session",5,0.857
+fold2,960,257,0.7206,"days_since_last_event, n_support_ticket, active_days, days_to_first_session, had_downgrade",5,0.52
+fold3,960,257,0.7367,"days_since_last_event, active_days, n_support_ticket, had_downgrade, days_to_first_session",5,0.601
+fold4,960,257,0.7267,"days_since_last_event, n_support_ticket, active_days, days_to_first_session, channel",4,0.616
+plan=basic,3272,928,0.7036,"days_since_last_event, n_support_ticket, active_days, days_to_first_session, sess_value_mean",4,0.6
+plan=pro,1528,357,0.7342,"days_since_last_event, had_downgrade, n_support_ticket, active_days, days_to_first_session",5,0.72
+Q1,1585,430,0.7048,"days_since_last_event, n_support_ticket, active_days, had_downgrade, sess_value_sum",4,0.672
+Q2,1610,439,0.7245,"days_since_last_event, n_support_ticket, active_days, plan_T, had_downgrade",4,0.616
+Q3,1605,416,0.7208,"days_since_last_event, n_support_ticket, active_days, days_to_first_session, had_downgrade",5,0.651

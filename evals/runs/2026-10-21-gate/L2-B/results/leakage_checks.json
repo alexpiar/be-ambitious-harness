@@ -1,0 +1,30 @@
+{
+  "label_permutation_test_auc": 0.4378,
+  "naive_full_year_model_cv_auc": 0.9986,
+  "naive_top_features": [
+    {
+      "feature": "n_payment",
+      "perm_drop_roc_auc": 0.1162
+    },
+    {
+      "feature": "signup_month",
+      "perm_drop_roc_auc": 0.0286
+    },
+    {
+      "feature": "n_exit_survey",
+      "perm_drop_roc_auc": 0.0111
+    },
+    {
+      "feature": "days_observed",
+      "perm_drop_roc_auc": 0.0061
+    },
+    {
+      "feature": "n_payment_failed",
+      "perm_drop_roc_auc": 0.0031
+    },
+    {
+      "feature": "n_session_start",
+      "perm_drop_roc_auc": 0.0029
+    }
+  ]
+}

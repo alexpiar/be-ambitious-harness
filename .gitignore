@@ -12,4 +12,5 @@ __pycache__/
 .venv/
 
 # Generated eval data (reproducible with fixtures/gen_events.py)
-evals/runs/**/*.csv
+evals/runs/**/events*.csv
+evals/runs/**/hidden-users.csv

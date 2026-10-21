@@ -1,0 +1,10 @@
+{
+  "roc_auc": 0.9281,
+  "pr_auc": 0.5981,
+  "recall_top10": 0.6534,
+  "precision_top10": 0.3949,
+  "lift_top10": 6.5205,
+  "brier": 0.0358,
+  "logloss": 0.1274,
+  "ece": 0.0066
+}

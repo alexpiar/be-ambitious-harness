@@ -144,7 +144,15 @@ Six playbooks route by *where the result lives*, not by topic. Each gives hints 
 
 ## Status: what has been tested
 
-<!-- GATE-RESULTS -->
+**Gate check, 21 Oct 2026** — [full record](evals/runs/2026-10-21-gate/). Two eval tasks (T3: code; L2: the "criterion vs data" trap on a churn dataset), the harness against the single-skill [robonuggets/be-ambitious](https://github.com/robonuggets/be-ambitious) on the same model, scored by a blind scorer on a different model. The protocol and the pass criterion were committed before the first run.
+
+- The harness fired **no failure conditions** in either task. The single skill fired **two of three in T3**: a multi-rung ambitious plan under "keep scope", and source edited before the tests were written.
+- In L2 the gate missed its fixed threshold (ROC AUC 0.548 vs 0.65). The worker logged "failed", left the criterion alone and delivered the baseline model (0.740 vs 0.537 for static attributes); the verifier re-ran every number from its own copy of the data — zero difference.
+- **Caveat that matters:** the single skill produced the technically deeper result both times — a fuller locale parser in T3, a richer analysis in L2. What the harness won on is discipline (test before fix, scope as asked, criterion read rather than revised), not depth.
+- Two tasks, one run each: a smoke test, not a benchmark. Blinding was partial. The runs used the Russian files; the English translation has not been run behaviorally yet.
+- The run exposed a harness defect: the verifier does not receive the gate criterion (prompt section 4), so it cannot check it against the prompt. A fix is pending.
+
+**Not run yet:** T1, T2 as a task of its own, T4–T6, L1.
 
 **Known gaps** (from the original notes):
 - No scenario for multimodal tasks (video, audio, 3D).

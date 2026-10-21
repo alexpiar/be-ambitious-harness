@@ -1,0 +1,65 @@
+{
+  "label_permutation": {
+    "gbm_tuned": {
+      "aucs": [
+        0.4969,
+        0.5318,
+        0.417,
+        0.5236,
+        0.5823
+      ],
+      "mean": 0.5103
+    },
+    "gbm_min_leaf_1000": {
+      "aucs": [
+        0.4773,
+        0.5561,
+        0.4587,
+        0.4919,
+        0.6125
+      ],
+      "mean": 0.5193
+    },
+    "logreg": {
+      "aucs": [
+        0.6255,
+        0.4391,
+        0.4083,
+        0.507,
+        0.5453
+      ],
+      "mean": 0.505
+    }
+  },
+  "lead_time_vs_baselines": {
+    "gbm": {
+      "flagged_within_60d_before_cancel": 0.936,
+      "flagged_14d_ahead": 0.686,
+      "median_lead_days": 25.5,
+      "distinct_users_flagged_oct_nov": 373,
+      "distinct_flagged_who_cancel_within_60d": 0.418
+    },
+    "rules_sql": {
+      "flagged_within_60d_before_cancel": 0.92,
+      "flagged_14d_ahead": 0.649,
+      "median_lead_days": 20.2,
+      "distinct_users_flagged_oct_nov": 464,
+      "distinct_flagged_who_cancel_within_60d": 0.332
+    },
+    "recency_only": {
+      "flagged_within_60d_before_cancel": 0.926,
+      "flagged_14d_ahead": 0.67,
+      "median_lead_days": 22.1,
+      "distinct_users_flagged_oct_nov": 505,
+      "distinct_flagged_who_cancel_within_60d": 0.293
+    },
+    "random": {
+      "flagged_within_60d_before_cancel": 0.532,
+      "flagged_14d_ahead": 0.404,
+      "median_lead_days": 33.6,
+      "distinct_users_flagged_oct_nov": 674,
+      "distinct_flagged_who_cancel_within_60d": 0.092
+    }
+  },
+  "active_test_users_oct_nov_avg": 1088
+}

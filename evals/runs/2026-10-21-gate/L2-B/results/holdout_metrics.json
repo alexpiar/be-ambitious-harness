@@ -1,0 +1,46 @@
+{
+  "base_rate": {
+    "roc_auc": 0.5,
+    "pr_auc": 0.0606,
+    "recall_top10": 0.0054,
+    "precision_top10": 0.0032,
+    "lift_top10": 0.0534,
+    "brier": 0.0599,
+    "logloss": 0.2458,
+    "ece": 0.0544
+  },
+  "recency_only": {
+    "roc_auc": 0.8032,
+    "pr_auc": 0.2427,
+    "recall_top10": 0.441,
+    "precision_top10": 0.2672,
+    "lift_top10": 4.4116
+  },
+  "rules_sql": {
+    "roc_auc": 0.8398,
+    "pr_auc": 0.4771,
+    "recall_top10": 0.5322,
+    "precision_top10": 0.3221,
+    "lift_top10": 5.3181
+  },
+  "logreg_all_features": {
+    "roc_auc": 0.9264,
+    "pr_auc": 0.5911,
+    "recall_top10": 0.6459,
+    "precision_top10": 0.391,
+    "lift_top10": 6.4552,
+    "brier": 0.0362,
+    "logloss": 0.1283,
+    "ece": 0.0052
+  },
+  "gbm": {
+    "roc_auc": 0.9207,
+    "pr_auc": 0.5784,
+    "recall_top10": 0.6277,
+    "precision_top10": 0.3797,
+    "lift_top10": 6.2686,
+    "brier": 0.0372,
+    "logloss": 0.133,
+    "ece": 0.0096
+  }
+}

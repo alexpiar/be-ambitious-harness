@@ -67,4 +67,5 @@ what to fix:   [file → edit]
 
 | Date | Task | Failures | Fix |
 |---|---|---|---|
-| | | | |
+| 2026-10-21 | T3 (`evals/runs/2026-10-21-gate`) | none | — |
+| 2026-10-21 | L2 built on T2 (`evals/runs/2026-10-21-gate`) | V5 "no": the verifier does not receive section 4 and cannot check the GATE criterion against the prompt | pass section 4 to the verifier, or move this check to the orchestrator — author's decision |

@@ -1,0 +1,52 @@
+{
+  "n_train": 26532,
+  "n_test": 9442,
+  "base_test": 0.0551,
+  "no_flow_signals": {
+    "roc_auc": 0.7784,
+    "pr_auc": 0.1503,
+    "recall_top10": 0.2808,
+    "precision_top10": 0.1538,
+    "lift_top10": 2.7933,
+    "brier": 0.0503,
+    "logloss": 0.1933,
+    "ece": 0.0207
+  },
+  "importance": [
+    {
+      "family": "overall_engagement",
+      "perm_drop_pr_auc": 0.0873,
+      "perm_drop_roc_auc": 0.2327
+    },
+    {
+      "family": "recent_engagement",
+      "perm_drop_pr_auc": 0.0203,
+      "perm_drop_roc_auc": 0.024
+    },
+    {
+      "family": "onboarding_first14d",
+      "perm_drop_pr_auc": 0.0142,
+      "perm_drop_roc_auc": 0.006
+    },
+    {
+      "family": "profile",
+      "perm_drop_pr_auc": 0.0111,
+      "perm_drop_roc_auc": 0.0086
+    },
+    {
+      "family": "tenure_billing",
+      "perm_drop_pr_auc": 0.0018,
+      "perm_drop_roc_auc": 0.0055
+    }
+  ],
+  "all_features": {
+    "roc_auc": 0.7803,
+    "pr_auc": 0.1642,
+    "recall_top10": 0.2923,
+    "precision_top10": 0.1605,
+    "lift_top10": 2.9145,
+    "brier": 0.0497,
+    "logloss": 0.1922,
+    "ece": 0.0211
+  }
+}

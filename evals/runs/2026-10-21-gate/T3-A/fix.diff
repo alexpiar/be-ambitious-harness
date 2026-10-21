@@ -1,0 +1,74 @@
+diff --git a/src/lib/locale.js b/src/lib/locale.js
+index 50b945e..c19008c 100644
+--- a/src/lib/locale.js
++++ b/src/lib/locale.js
+@@ -5,9 +5,11 @@ function languageOf(locale) {
+   return locale.split('-')[0].toLowerCase();
+ }
+ 
++// Второй подтег в верхнем регистре или null, если его нет. Тег без региона —
++// не ошибка: краши #48213, #48377, #48530 (Android 11/12, локали «de», «pt», «fil»).
+ function regionOf(locale) {
+   const parts = locale.split('-');
+-  return parts[1].toUpperCase();
++  return parts[1] ? parts[1].toUpperCase() : null;
+ }
+ 
+ module.exports = { languageOf, regionOf };
+diff --git a/src/screens/settings.js b/src/screens/settings.js
+index f4304dd..7971b90 100644
+--- a/src/screens/settings.js
++++ b/src/screens/settings.js
+@@ -25,8 +25,9 @@ function buildRegionSection(device) {
+     id: 'region',
+     rows: [
+       { label: 'Language', value: languageOf(device.locale) },
+-      { label: 'Region', value: region },
+-      { label: 'Currency', value: currencyFor(region) },
++      // Без региона обе строки — «—»: валюту не угадываем (currencyFor вернул бы USD).
++      { label: 'Region', value: region === null ? '—' : region },
++      { label: 'Currency', value: region === null ? '—' : currencyFor(region) },
+     ],
+   };
+ }
+diff --git a/test/settings-locale-without-region.test.js b/test/settings-locale-without-region.test.js
+new file mode 100644
+index 0000000..d3ac8d2
+--- /dev/null
++++ b/test/settings-locale-without-region.test.js
+@@ -0,0 +1,35 @@
++'use strict';
++// Регрессия крашей #48213 (de), #48377 (pt), #48530 (fil), Android 11/12:
++// Settings падал в regionOf (src/lib/locale.js:10) с TypeError (reading 'toUpperCase'),
++// когда в locale нет второго подтега.
++//
++// Профили здесь СИНТЕТИЧЕСКИЕ, это не зеркала реальной оболочки: копия
++// devices/galaxy-s21-de-de.json, в которой заменён только locale.
++const test = require('node:test');
++const assert = require('node:assert');
++const { openScreen } = require('../src/app');
++
++const galaxy = require('../devices/galaxy-s21-de-de.json');
++
++const CASES = [
++  { locale: 'de', report: '48213' },
++  { locale: 'pt', report: '48377' },
++  { locale: 'fil', report: '48530' },
++];
++
++for (const { locale, report } of CASES) {
++  test(`settings opens for locale without region "${locale}" (crash #${report})`, () => {
++    const profile = { ...galaxy, locale };
++    const screen = openScreen('settings', profile);
++
++    assert.deepStrictEqual(screen.sections.map((s) => s.id), ['account', 'region', 'storage', 'display']);
++
++    // Без региона обе строки показывают «—»; неявный USD недопустим.
++    const region = screen.sections.find((s) => s.id === 'region');
++    assert.deepStrictEqual(region.rows, [
++      { label: 'Language', value: locale },
++      { label: 'Region', value: '—' },
++      { label: 'Currency', value: '—' },
++    ]);
++  });
++}

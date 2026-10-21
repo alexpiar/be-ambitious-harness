@@ -1,0 +1,277 @@
+{
+  "overall": {
+    "n": 6000,
+    "S30": 0.925,
+    "S60": 0.787,
+    "S90": 0.691,
+    "S180": 0.564,
+    "median_days": null
+  },
+  "by_onboarding_first14d": {
+    "high_s14": {
+      "n": 1583,
+      "S30": 0.965,
+      "S60": 0.879,
+      "S90": 0.815,
+      "S180": 0.73,
+      "median_days": null
+    },
+    "low_s14": {
+      "n": 2005,
+      "S30": 0.884,
+      "S60": 0.705,
+      "S90": 0.59,
+      "S180": 0.434,
+      "median_days": 128.0
+    },
+    "mid_s14": {
+      "n": 2412,
+      "S30": 0.932,
+      "S60": 0.794,
+      "S90": 0.695,
+      "S180": 0.563,
+      "median_days": null
+    },
+    "logrank_p_first_vs_last": 2.3148502848120167e-74
+  },
+  "onboarding_tercile_edges_sessions": [
+    4.0,
+    8.0
+  ],
+  "by_plan": {
+    "basic": {
+      "n": 4070,
+      "S30": 0.918,
+      "S60": 0.775,
+      "S90": 0.674,
+      "S180": 0.546,
+      "median_days": 313.6
+    },
+    "pro": {
+      "n": 1930,
+      "S30": 0.939,
+      "S60": 0.811,
+      "S90": 0.728,
+      "S180": 0.601,
+      "median_days": null
+    },
+    "logrank_p_first_vs_last": 1.5933127730026871e-06
+  },
+  "by_channel": {
+    "ads": {
+      "n": 3036,
+      "S30": 0.927,
+      "S60": 0.78,
+      "S90": 0.681,
+      "S180": 0.545,
+      "median_days": null
+    },
+    "organic": {
+      "n": 2037,
+      "S30": 0.922,
+      "S60": 0.784,
+      "S90": 0.691,
+      "S180": 0.569,
+      "median_days": null
+    },
+    "referral": {
+      "n": 927,
+      "S30": 0.926,
+      "S60": 0.816,
+      "S90": 0.724,
+      "S180": 0.614,
+      "median_days": null
+    },
+    "logrank_p_first_vs_last": 0.00014842568003581487
+  },
+  "by_device": {
+    "android": {
+      "n": 2026,
+      "S30": 0.92,
+      "S60": 0.778,
+      "S90": 0.681,
+      "S180": 0.542,
+      "median_days": null
+    },
+    "ios": {
+      "n": 1968,
+      "S30": 0.92,
+      "S60": 0.777,
+      "S90": 0.691,
+      "S180": 0.57,
+      "median_days": null
+    },
+    "web": {
+      "n": 2006,
+      "S30": 0.936,
+      "S60": 0.805,
+      "S90": 0.702,
+      "S180": 0.58,
+      "median_days": null
+    },
+    "logrank_p_first_vs_last": 0.017090550813104365
+  },
+  "by_country": {
+    "BR": {
+      "n": 899,
+      "S30": 0.928,
+      "S60": 0.794,
+      "S90": 0.685,
+      "S180": 0.548,
+      "median_days": null
+    },
+    "DE": {
+      "n": 908,
+      "S30": 0.936,
+      "S60": 0.805,
+      "S90": 0.71,
+      "S180": 0.562,
+      "median_days": null
+    },
+    "FR": {
+      "n": 570,
+      "S30": 0.918,
+      "S60": 0.789,
+      "S90": 0.695,
+      "S180": 0.569,
+      "median_days": null
+    },
+    "GB": {
+      "n": 731,
+      "S30": 0.932,
+      "S60": 0.792,
+      "S90": 0.696,
+      "S180": 0.579,
+      "median_days": null
+    },
+    "IN": {
+      "n": 1040,
+      "S30": 0.913,
+      "S60": 0.759,
+      "S90": 0.667,
+      "S180": 0.55,
+      "median_days": null
+    },
+    "US": {
+      "n": 1852,
+      "S30": 0.924,
+      "S60": 0.787,
+      "S90": 0.695,
+      "S180": 0.574,
+      "median_days": null
+    },
+    "logrank_p_first_vs_last": 0.30336570281273756
+  },
+  "censoring_trap": {
+    "1": {
+      "raw_churn_share": 0.521,
+      "km_churn_by_90d": 0.336
+    },
+    "2": {
+      "raw_churn_share": 0.468,
+      "km_churn_by_90d": 0.302
+    },
+    "3": {
+      "raw_churn_share": 0.467,
+      "km_churn_by_90d": 0.302
+    },
+    "4": {
+      "raw_churn_share": 0.449,
+      "km_churn_by_90d": 0.287
+    },
+    "5": {
+      "raw_churn_share": 0.47,
+      "km_churn_by_90d": 0.352
+    },
+    "6": {
+      "raw_churn_share": 0.461,
+      "km_churn_by_90d": 0.309
+    },
+    "7": {
+      "raw_churn_share": 0.428,
+      "km_churn_by_90d": 0.324
+    },
+    "8": {
+      "raw_churn_share": 0.373,
+      "km_churn_by_90d": 0.277
+    },
+    "9": {
+      "raw_churn_share": 0.335,
+      "km_churn_by_90d": 0.288
+    }
+  },
+  "mechanisms": {
+    "involuntary_payment_failed": {
+      "churners": 1041,
+      "share": 0.393,
+      "lost_mrr": 14824.59
+    },
+    "voluntary_silent": {
+      "churners": 945,
+      "share": 0.357,
+      "lost_mrr": 12815.55
+    },
+    "voluntary_with_signal(downgrade/ticket)": {
+      "churners": 664,
+      "share": 0.251,
+      "lost_mrr": 10353.36
+    }
+  },
+  "lost_mrr_total": 37993.5,
+  "active_mrr_end_of_year": 50896.5,
+  "payment_failed_users_who_cancelled": "1041 из 1041",
+  "days_from_payment_failed_to_cancel": {
+    "p10": 2.3,
+    "median": 12.8,
+    "p90": 25.9
+  },
+  "ticket_users_who_cancelled": "940 из 1203",
+  "downgrade_users_who_cancelled": "229 из 229",
+  "churners_never_paid": 851,
+  "voluntary_cancel_by_days_to_next_bill": {
+    "bins": [
+      "0-6",
+      "6-12",
+      "12-18",
+      "18-24",
+      "24-30"
+    ],
+    "cancels": [
+      411,
+      428,
+      238,
+      249,
+      283
+    ]
+  },
+  "voluntary_hazard_ratio_last12d_before_bill": 1.3,
+  "sessions_per_week_churners_by_weeks_before_cancel": {
+    "0": 0.33,
+    "1": 0.38,
+    "2": 0.63,
+    "3": 0.67,
+    "4": 1.01,
+    "5": 1.43,
+    "6": 1.52,
+    "7": 1.4,
+    "8": 1.51
+  },
+  "sessions_per_week_retained": 2.33,
+  "exit_survey": {
+    "response_rate_among_churners": 0.605,
+    "reasons": {
+      "not_using": 432,
+      "price": 402,
+      "other": 385,
+      "missing_feature": 383
+    },
+    "chi2_p_reason_vs_payment_failed": 0.065,
+    "chi2_p_reason_vs_downgrade": 0.33,
+    "chi2_p_reason_vs_ticket": 0.718,
+    "chi2_p_reason_vs_plan": 0.164,
+    "kruskal_p_reason_vs_first14d_sessions": 0.274,
+    "share_saying_price_among_payment_failed": 0.28,
+    "share_saying_price_among_downgraders": 0.21,
+    "share_saying_price_overall": 0.251
+  }
+}

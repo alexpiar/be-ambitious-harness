@@ -1,0 +1,23 @@
+{
+  "gbm_roc": [
+    0.9094,
+    0.9311
+  ],
+  "gbm_pr": [
+    0.537,
+    0.6147
+  ],
+  "gbm_recall10": [
+    0.5898,
+    0.6722
+  ],
+  "diff_pr_vs_logreg_all_features": [
+    -0.0296,
+    0.0045
+  ],
+  "diff_roc_vs_logreg_all_features": [
+    -0.0117,
+    0.0005
+  ],
+  "best_baseline": "logreg_all_features"
+}

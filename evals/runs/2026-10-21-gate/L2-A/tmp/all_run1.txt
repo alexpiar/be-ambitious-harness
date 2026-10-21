@@ -1,0 +1,311 @@
+CSV: ../data/events_2025.csv | SHA-256: 2284d9bc94351ba7a362d45a52b3b83e534bb0a342446a5321cc78568b1d93f1 | строк: 424352
+holdout: 1200 id, SHA-256 holdout_ids.txt = 6d106d9fb8221afd7bd4ca9864cae1f231be4d8a43bf2f41aef8abe986d4724b
+== Целостность (весь файл) ==
+n_rows: 424352
+full_duplicates: 0
+dup_ts_user_event: 1
+sorted_by_ts: True
+ts_min: 2025-01-01 01:10:32
+ts_max: 2025-12-31 23:56:12
+n_users: 6000
+signups_per_user: {1: 6000}
+users_without_signup: 0
+missing_by_col: {'ts': 0, 'user_id': 0, 'event': 0, 'value': 10082, 'plan': 0, 'device': 0, 'country': 0, 'channel': 0}
+missing_value_by_event: {'cancel': 2650, 'exit_survey': 0, 'feature_used': 0, 'payment': 0, 'payment_failed': 0, 'plan_downgrade': 229, 'session_start': 0, 'signup': 6000, 'support_ticket': 1203}
+nonmissing_value_by_event: {'cancel': 0, 'exit_survey': 1602, 'feature_used': 101214, 'payment': 27417, 'payment_failed': 1041, 'plan_downgrade': 0, 'session_start': 282996, 'signup': 0, 'support_ticket': 0}
+signup_by_month: {1: 660, 2: 645, 3: 676, 4: 662, 5: 677, 6: 674, 7: 691, 8: 665, 9: 650}
+event_counts: {'session_start': 282996, 'feature_used': 101214, 'payment': 27417, 'signup': 6000, 'cancel': 2650, 'exit_survey': 1602, 'support_ticket': 1203, 'payment_failed': 1041, 'plan_downgrade': 229}
+plan: max nunique per user = 1; {'basic': 4070, 'pro': 1930}
+device: max nunique per user = 1; {'android': 2026, 'web': 2006, 'ios': 1968}
+country: max nunique per user = 1; {'US': 1852, 'IN': 1040, 'DE': 908, 'BR': 899, 'GB': 731, 'FR': 570}
+channel: max nunique per user = 1; {'ads': 3036, 'organic': 2037, 'referral': 927}
+values[exit_survey]: {'not_using': 432, 'price': 402, 'other': 385, 'missing_feature': 383}
+values[feature_used]: {'export': 25417, 'tags': 25359, 'search': 25291, 'share': 25147}
+values[payment]: {'9.99': 18099, '24.99': 9318}
+values[payment_failed]: {'9.99': 746, '24.99': 295}
+values[session_start]: {'1': 23945, '5': 23770, '8': 23698, '12': 23667, '2': 23612, '3': 23588, '7': 23543, '9': 23526, '4': 23496, '10': 23448, '6': 23369, '11': 23334}
+cancels_per_user: {1: 2650}
+
+== Проверки для решений (только dev) ==
+dev users: 4800 | events before signup: 8 {'plan_downgrade': 6, 'support_ticket': 2}
+
+События по месяцам (dev, штук):
+event  cancel  exit_survey  feature_used  payment  payment_failed  plan_downgrade  session_start  signup  support_ticket
+month                                                                                                                   
+1          14            9          1407       13               2               6           3617     528              14
+2          63           38          2484      405              36              11           6613     516              28
+3         161           95          3997      862              56              13          10816     541              71
+4         179          121          4898     1185              71              15          13525     530              83
+5         207          135          6039     1573              79              24          16882     541              94
+6         236          148          6928     1822              94              20          19263     539              92
+7         250          139          8126     2184             117              17          22778     553             106
+8         270          157          9033     2504              92              19          25317     532             104
+9         226          135         10015     2711              90              18          27797     520             107
+10        243          139          9793     3097              93              15          27581       0             115
+11        157           98          9014     2797              68              15          25803       0              88
+12        125           72          9163     2781              28               4          25970       0              60
+
+События на активного пользователя по месяцам (dev):
+       active_users  cancel  exit_survey  feature_used  payment  payment_failed  plan_downgrade  session_start  signup  support_ticket
+month                                                                                                                                 
+1               528   0.027        0.017         2.665    0.025           0.004           0.011          6.850   1.000           0.027
+2              1030   0.061        0.037         2.412    0.393           0.035           0.011          6.420   0.501           0.027
+3              1508   0.107        0.063         2.651    0.572           0.037           0.009          7.172   0.359           0.047
+4              1877   0.095        0.064         2.609    0.631           0.038           0.008          7.206   0.282           0.044
+5              2239   0.092        0.060         2.697    0.703           0.035           0.011          7.540   0.242           0.042
+6              2571   0.092        0.058         2.695    0.709           0.037           0.008          7.492   0.210           0.036
+7              2888   0.087        0.048         2.814    0.756           0.041           0.006          7.887   0.191           0.037
+8              3170   0.085        0.050         2.850    0.790           0.029           0.006          7.986   0.168           0.033
+9              3420   0.066        0.039         2.928    0.793           0.026           0.005          8.128   0.152           0.031
+10             3194   0.076        0.044         3.066    0.970           0.029           0.005          8.635   0.000           0.036
+11             2951   0.053        0.033         3.055    0.948           0.023           0.005          8.744   0.000           0.030
+12             2794   0.045        0.026         3.280    0.995           0.010           0.001          9.295   0.000           0.021
+
+session_start.value по месяцам (dev):
+         count   mean    std  min  50%   max
+month                                       
+1       3617.0  6.509  3.475  1.0  6.0  12.0
+2       6613.0  6.421  3.439  1.0  6.0  12.0
+3      10816.0  6.477  3.465  1.0  6.0  12.0
+4      13525.0  6.507  3.440  1.0  7.0  12.0
+5      16882.0  6.461  3.471  1.0  6.0  12.0
+6      19263.0  6.483  3.452  1.0  6.0  12.0
+7      22778.0  6.466  3.452  1.0  6.0  12.0
+8      25317.0  6.520  3.462  1.0  7.0  12.0
+9      27797.0  6.485  3.449  1.0  6.0  12.0
+10     27581.0  6.497  3.467  1.0  7.0  12.0
+11     25803.0  6.518  3.461  1.0  7.0  12.0
+12     25970.0  6.491  3.442  1.0  6.0  12.0
+
+Доли видов feature_used по месяцам (dev):
+value  export  search  share   tags
+month                              
+1       0.258   0.241  0.258  0.243
+2       0.259   0.233  0.262  0.246
+3       0.256   0.248  0.242  0.254
+4       0.248   0.259  0.255  0.237
+5       0.250   0.254  0.251  0.245
+6       0.254   0.244  0.255  0.247
+7       0.254   0.241  0.254  0.251
+8       0.261   0.249  0.238  0.252
+9       0.245   0.250  0.248  0.257
+10      0.250   0.252  0.250  0.249
+11      0.247   0.257  0.244  0.252
+12      0.252   0.250  0.243  0.256
+
+Суммы payment/payment_failed по месяцам (dev):
+value                 24.99  9.99
+event          month             
+payment        1          4     9
+               2        137   268
+               3        290   572
+               4        379   806
+               5        504  1069
+               6        620  1202
+               7        736  1448
+               8        820  1684
+               9        901  1810
+               10      1048  2049
+               11       959  1838
+               12       959  1822
+payment_failed 1          1     1
+               2          9    27
+               3         19    37
+               4         28    43
+               5         20    59
+               6         28    66
+               7         36    81
+               8         29    63
+               9         19    71
+               10        26    67
+               11         9    59
+               12         9    19
+
+session_start.value распределение (dev): {1.0: 19088, 2.0: 18860, 3.0: 18865, 4.0: 18663, 5.0: 19059, 6.0: 18634, 7.0: 18824, 8.0: 18879, 9.0: 18808, 10.0: 18672, 11.0: 18683, 12.0: 18927}
+session_start.value Spearman: с номером сессии 0.000; с днями от signup -0.000; с часом -0.003
+событий на пользователя (dev): {'count': 4800.0, 'mean': 70.62, 'std': 66.6, 'min': 3.0, '25%': 20.0, '50%': 50.0, '75%': 103.0, 'max': 756.0}
+session_start на пользователя в сутки (dev): {'count': 185186.0, 'mean': 1.22, 'std': 0.51, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 9.0}
+топ-5 по числу событий: {'u8503274': 756, 'u8501891': 635, 'u8501619': 472, 'u8501774': 466, 'u8502670': 458}
+
+cancel (dev): пользователей 2131 | с событиями после cancel: 1286 {'exit_survey': 1286}
+  дней после cancel у таких событий: {'count': 1286.0, 'mean': 0.02, 'std': 0.0, 'min': 0.02, '25%': 0.02, '50%': 0.02, '75%': 0.02, 'max': 0.02}
+cancel: дней от signup: {'count': 2131.0, 'mean': 75.16, 'std': 50.31, 'min': 18.03, '25%': 36.71, '50%': 61.82, '75%': 99.67, 'max': 321.27}
+cancel: гистограмма по 7 дням (первые 20 недель): {2: 84, 3: 207, 4: 195, 5: 194, 6: 149, 7: 133, 8: 128, 9: 134, 10: 105, 11: 87, 12: 92, 13: 74, 14: 77, 15: 57, 16: 47, 17: 48, 18: 42, 19: 34, 20: 29, 21: 23}
+
+exit_survey (dev): 1286 | без cancel: 0 | раньше cancel: 0
+  часов exit_survey − cancel: {'count': 1286.0, 'mean': 0.48, 'std': 0.0, 'min': 0.48, '25%': 0.48, '50%': 0.48, '75%': 0.48, 'max': 0.48}
+  доля отменивших с exit_survey: 0.603
+
+plan_downgrade (dev): событий 177 пользователей 177 | их plan в колонке: {'pro': 177}
+payment.value по plan и фазе относительно downgrade (dev):
+amt                     9.99   24.99
+plan  phase                         
+basic no_downgrade      14577      0
+pro   after_downgrade       0     53
+      before_downgrade      0    251
+      no_downgrade          0   7053
+payment_failed.value по plan и фазе (dev):
+value                   24.99  9.99
+plan  phase                        
+basic no_downgrade          0   593
+pro   after_downgrade      30     0
+      before_downgrade     33     0
+      no_downgrade        170     0
+первый payment: дней от signup: {'count': 4121.0, 'mean': 30.0, 'std': 0.0, 'min': 30.0, '25%': 30.0, '50%': 30.0, '75%': 30.0, 'max': 30.0} | без payment: 679
+интервал между payment, дней: {'count': 17813.0, 'mean': 30.0, 'std': 0.0, 'min': 30.0, '25%': 30.0, '50%': 30.0, '75%': 30.0, 'max': 30.0}
+plan_downgrade: дней от signup: {'count': 177.0, 'mean': 62.04, 'std': 47.57, 'min': -3.29, '25%': 24.04, '50%': 54.1, '75%': 89.66, 'max': 239.93}
+
+Срезы (dev):
+          max_T_plus_60 window_inside_data dev_cancel_before_T dev_share_cancel_before_T dev_population dev_positives dev_pos_rate
+3   2025-12-01 23:39:27               True                   0                       0.0           4800          1090       0.2271
+7   2025-12-05 23:39:27               True                   0                       0.0           4800          1176        0.245
+14  2025-12-12 23:39:27               True                   0                       0.0           4800          1285       0.2677
+30  2025-12-28 23:39:27               True                 353                    0.0735           4447          1140       0.2564
+Строки-дубли по (ts,user_id,event):
+                        ts   user_id          event value   plan   device country  channel
+312212 2025-10-21 21:30:19  u8505145  session_start    11  basic  android      BR  organic
+312213 2025-10-21 21:30:19  u8505145  session_start     7  basic  android      BR  organic
+События раньше signup (dev):
+                        ts   user_id           event           signup_ts        dt
+357    2025-01-05 16:49:27  u8501246  plan_downgrade 2025-01-08 23:41:41 -3.286273
+3032   2025-01-18 00:21:33  u8503152  plan_downgrade 2025-01-19 01:09:47 -1.033495
+16059  2025-02-22 04:54:16  u8500486  plan_downgrade 2025-02-22 14:34:19 -0.402813
+24500  2025-03-08 18:35:46  u8503366  plan_downgrade 2025-03-10 21:01:57 -2.101516
+70428  2025-05-05 06:03:03  u8502000  plan_downgrade 2025-05-08 01:04:47 -2.792870
+103242 2025-06-05 03:45:19  u8502598  support_ticket 2025-06-05 07:02:11 -0.136713
+131029 2025-06-28 02:37:29  u8502420  plan_downgrade 2025-06-30 16:45:42 -2.589039
+183137 2025-08-04 20:36:52  u8505223  support_ticket 2025-08-04 22:49:43 -0.092257
+payment/payment_failed: min дней от signup = 30.000000; max (дней mod 30) = 0.000000
+Пользователи без payment (dev): {'users': 679, 'cancel_before_30d': 353, 'with_payment_failed': 326, 'no_cancel': 0}
+Когорты по месяцу регистрации (dev), среднее за [signup, signup+14d] и метка D=14:
+    session_start  feature_used  support_ticket  plan_downgrade    y14    n
+cm                                                                         
+1           6.625         2.608           0.021           0.006  0.295  528
+2           6.527         2.671           0.010           0.010  0.260  516
+3           6.641         2.728           0.015           0.000  0.259  541
+4           6.670         2.523           0.013           0.002  0.213  530
+5           6.712         2.558           0.017           0.004  0.327  541
+6           6.505         2.607           0.007           0.004  0.276  539
+7           6.391         2.519           0.011           0.002  0.278  553
+8           6.429         2.566           0.011           0.004  0.244  532
+9           6.621         2.667           0.017           0.004  0.254  520
+Метка D=14 по месяцу регистрации: chi2=22.78, dof=8, p=0.0037
+Отменившие (dev): событий на пользователя в день k до cancel, k=0..40: {0: 0.092, 1: 0.116, 2: 0.123, 3: 0.113, 4: 0.109, 5: 0.117, 6: 0.136, 7: 0.106, 8: 0.119, 9: 0.113, 10: 0.132, 11: 0.113, 12: 0.138, 13: 0.161, 14: 0.173, 15: 0.183, 16: 0.176, 17: 0.182, 18: 0.215, 19: 0.221, 20: 0.194, 21: 0.183, 22: 0.192, 23: 0.176, 24: 0.17, 25: 0.169, 26: 0.164, 27: 0.194, 28: 0.176, 29: 0.199, 30: 0.196, 31: 0.206, 32: 0.234, 33: 0.248, 34: 0.235, 35: 0.286, 36: 0.274, 37: 0.262, 38: 0.262, 39: 0.243, 40: 0.234}
+Дней от последнего события до cancel (dev): {'count': 2129.0, 'mean': 8.46, 'std': 6.52, 'min': 0.01, '25%': 3.02, '50%': 6.71, '75%': 12.93, 'max': 29.68}
+plan_downgrade (dev): событий 177, доля с последующим cancel 1.000, без cancel 0, дней до cancel: {'count': 177.0, 'mean': 15.23, 'std': 6.09, 'min': 5.0, '25%': 9.43, '50%': 15.11, '75%': 20.8, 'max': 24.95}
+support_ticket (dev): событий 962, доля с последующим cancel 0.781, без cancel 211, дней до cancel: {'count': 751.0, 'mean': 10.82, 'std': 5.31, 'min': 2.01, '25%': 6.24, '50%': 10.56, '75%': 15.5, 'max': 19.96}
+payment_failed (dev): событий 826, доля с последующим cancel 1.000, без cancel 0, дней до cancel: {'count': 826.0, 'mean': 13.26, 'std': 8.46, 'min': 0.01, '25%': 6.12, '50%': 12.73, '75%': 19.78, 'max': 29.89}
+GATE D=7: dev-популяция 4800, положительных 1176 (доля 0.2450)
+AUC(А, статика) = 0.5306 [0.5127; 0.5481]
+AUC(Б, статика+поведение) = 0.5483 [0.5287; 0.5684]
+AUC(Б) − AUC(А) = 0.0177 [0.0057; 0.0298]
+исход: не пройдена | секунд: 1.5
+D=14: dev 4800 / положительных 1285 (0.2677); holdout 1200 / 303 (0.2525); id holdout в dev: 0
+одиночные AUC (dev): {'n_sessions': 0.377, 'sess_value_sum': 0.379, 'sess_value_mean': 0.477, 'sess_value_max': 0.435, 'active_days': 0.354, 'n_feature_used': 0.412, 'n_fu_export': 0.449, 'n_fu_tags': 0.455, 'n_fu_search': 0.448, 'n_fu_share': 0.458, 'n_payment': 0.5, 'n_payment_failed': 0.5, 'n_support_ticket': 0.522, 'had_downgrade': 0.507, 'days_since_last_event': 0.683, 'days_to_first_session': 0.514}
+признаки с max(AUC,1-AUC) > 0.90: [] | константы на dev: ['n_payment', 'n_payment_failed']
+группы |Spearman| >= 0.8 (dev): [['n_sessions', 'sess_value_sum', 'active_days']]
+CV-сетка (dev):
+                                                                            cfg  oof_auc  fold_mean  fold_sd
+                                                     kind=lr,C=0.01,log1p=False   0.7168     0.7171   0.0166
+                                                      kind=lr,C=0.01,log1p=True   0.7087     0.7089   0.0209
+                                                      kind=lr,C=0.1,log1p=False   0.7160     0.7163   0.0168
+                                                       kind=lr,C=0.1,log1p=True   0.7081     0.7083   0.0213
+                                                      kind=lr,C=1.0,log1p=False   0.7154     0.7158   0.0168
+                                                       kind=lr,C=1.0,log1p=True   0.7075     0.7078   0.0213
+                                                     kind=lr,C=10.0,log1p=False   0.7153     0.7156   0.0167
+                                                      kind=lr,C=10.0,log1p=True   0.7073     0.7076   0.0213
+  kind=hgb,learning_rate=0.03,max_leaf_nodes=7,min_samples_leaf=20,max_iter=150   0.7120     0.7131   0.0147
+ kind=hgb,learning_rate=0.03,max_leaf_nodes=7,min_samples_leaf=100,max_iter=150   0.6987     0.6993   0.0143
+ kind=hgb,learning_rate=0.03,max_leaf_nodes=31,min_samples_leaf=20,max_iter=150   0.7064     0.7069   0.0172
+kind=hgb,learning_rate=0.03,max_leaf_nodes=31,min_samples_leaf=100,max_iter=150   0.6889     0.6890   0.0138
+   kind=hgb,learning_rate=0.1,max_leaf_nodes=7,min_samples_leaf=20,max_iter=150   0.7113     0.7122   0.0150
+  kind=hgb,learning_rate=0.1,max_leaf_nodes=7,min_samples_leaf=100,max_iter=150   0.6935     0.6941   0.0182
+  kind=hgb,learning_rate=0.1,max_leaf_nodes=31,min_samples_leaf=20,max_iter=150   0.6919     0.6920   0.0122
+ kind=hgb,learning_rate=0.1,max_leaf_nodes=31,min_samples_leaf=100,max_iter=150   0.6711     0.6713   0.0102
+                                                          kind=lr_static,C=0.01   0.5382     0.5385   0.0170
+                                                           kind=lr_static,C=0.1   0.5383     0.5385   0.0172
+                                                           kind=lr_static,C=1.0   0.5383     0.5386   0.0172
+                                                          kind=lr_static,C=10.0   0.5383     0.5386   0.0172
+выбрана модель: kind=lr,C=0.01,log1p=False | статический бейзлайн: kind=lr_static,C=1.0
+dev OOF: AUC модель 0.7168, статика 0.5383, разность 0.1785 [0.1578; 0.2003]
+dev OOF: положительные с cancel через (0; 14] сут после T: n=291, AUC против всех отрицательных 0.8342 [0.8110; 0.8580]
+dev OOF: положительные с cancel через (14; 30] сут после T: n=434, AUC против всех отрицательных 0.7662 [0.7425; 0.7885]
+dev OOF: положительные с cancel через (30; 60] сут после T: n=560, AUC против всех отрицательных 0.6175 [0.5945; 0.6425]
+HOLDOUT (одна оценка):
+  model          ROC AUC 0.7395 [0.7078; 0.7697] | PR AUC 0.5117 [0.4552; 0.5651] | доля уходящих в топ-20% 0.5083 [0.4375; 0.5667] | лифт 2.013 [1.771; 2.232]
+  static_lr      ROC AUC 0.5373 [0.5012; 0.5748] | PR AUC 0.2748 [0.2426; 0.3142] | доля уходящих в топ-20% 0.2971 [0.2390; 0.3545] | лифт 1.177 [0.980; 1.371]
+  rule_sessions  ROC AUC 0.6302 [0.5959; 0.6639] | PR AUC 0.3382 [0.2968; 0.3855] | доля уходящих в топ-20% 0.3563 [0.3013; 0.4145] | лифт 1.411 [1.224; 1.606]
+  base_rate      ROC AUC 0.5000 [0.5000; 0.5000] | PR AUC 0.2525 [0.2291; 0.2767] | доля уходящих в топ-20% 0.2525 [0.2291; 0.2767] | лифт 1.000 [1.000; 1.000]
+  model-static_lr:roc_auc          0.2023 [0.1550; 0.2476]
+  model-static_lr:pr_auc           0.2369 [0.1853; 0.2842]
+  model-static_lr:lift_top20       0.8366 [0.5514; 1.1164]
+  model-rule_sessions:roc_auc      0.1093 [0.0763; 0.1398]
+  model-rule_sessions:pr_auc       0.1735 [0.1267; 0.2161]
+  model-rule_sessions:lift_top20   0.6020 [0.3289; 0.8096]
+  model-base_rate:roc_auc          0.2395 [0.2078; 0.2697]
+  model-base_rate:pr_auc           0.2592 [0.2108; 0.3061]
+  model-base_rate:lift_top20       1.0132 [0.7715; 1.2317]
+отрицательный результат (нижняя граница ДИ разности ≤ 0): False | объём: {'holdout': {'diff': 0.20226939081868045, 'sd': 0.022783033801288183, 'n': 1200, 'n_for_ci_lower_gt0': 58.48442318414994, 'n_for_80pct_power': 119.49552152308394}, 'dev_oof': {'diff': 0.17854033021348203, 'sd': 0.010840708652778579, 'n': 4800, 'n_for_ci_lower_gt0': 67.97983474321038, 'n_for_80pct_power': 138.89657046142335}}
+Перестановочная важность (holdout, 30 перестановок, бутстрэп 1000):
+                                     unit rank_holdout      drop_auc         ci_lo        ci_hi  indistinguishable_from_0  constant_on_holdout n_holdout_needed rank_min_max_dev                                                                                                                                                                                                                                        direction
+                    days_since_last_event            1  1.143981e-01  9.105450e-02 1.361511e-01                     False                False                               1-1 PD 0.1669->0.3780 при 0.431676->8.28689; ЛР +0.4761; Spearman +0.2806; доля метки по бинам dev (0.00010000000000000005, 1.289]: 0.147 (n=1200) | (1.289, 3.428]: 0.167 (n=1200) | (3.428, 7.146]: 0.279 (n=1200) | (7.146, 14.0]: 0.477 (n=1200)
+                         n_support_ticket            2  3.212701e-02  1.907623e-02 4.595661e-02                     False                False                               2-3                                                                                                                        PD 0.2602->0.8176 при 0->1; ЛР +0.3251; Spearman +0.1653; доля метки по бинам dev 0.0: 0.259 (n=4735) | 1.0: 0.892 (n=65)
+                              active_days            3  1.752523e-02  9.057979e-03 2.587606e-02                     False                False                               2-4                                             PD 0.3022->0.2158 при 4->9; ЛР -0.2164; Spearman -0.2265; доля метки по бинам dev (0.999, 5.0]: 0.363 (n=1806) | (5.0, 6.0]: 0.304 (n=898) | (6.0, 8.0]: 0.218 (n=1350) | (8.0, 15.0]: 0.083 (n=746)
+                            had_downgrade            4  1.267788e-02  5.458171e-03 2.196204e-02                     False                False                              2-12                                                                                                                        PD 0.2656->0.9009 при 0->1; ЛР +0.2168; Spearman +0.1015; доля метки по бинам dev 0.0: 0.265 (n=4782) | 1.0: 1.000 (n=18)
+                    days_to_first_session            5  4.349298e-03  4.551255e-05 8.479690e-03                     False                False                              4-20                PD 0.2833->0.2480 при 0.153623->4.12979; ЛР -0.1154; Spearman +0.0217; доля метки по бинам dev (-0.000352, 0.416]: 0.265 (n=1200) | (0.416, 1.049]: 0.251 (n=1200) | (1.049, 2.29]: 0.268 (n=1200) | (2.29, 14.0]: 0.287 (n=1200)
+                                   device            6  3.087667e-03 -5.192362e-05 6.033428e-03                      True                False             1159             6-20                                                                                                                                                                                                        PD android=0.2778; ios=0.2724; web=0.2530
+                                  channel            7  3.006906e-03 -1.015244e-03 6.770866e-03                      True                False             2032             5-20                                                                                                                                                                                                   PD ads=0.2768; organic=0.2683; referral=0.2369
+                                   plan_T            8  1.977377e-03 -1.944536e-03 5.684037e-03                      True                False             4275             4-14                                                                                                                                                                                                                      PD basic=0.2761; pro=0.2484
+                          sess_value_mean            9  1.263348e-03 -1.853614e-03 4.338769e-03                      True                False             7325             5-20                      PD 0.2796->0.2554 при 4.33333->8.5; ЛР -0.0581; Spearman -0.0354; доля метки по бинам dev (-0.001, 5.426]: 0.317 (n=1200) | (5.426, 6.429]: 0.254 (n=1211) | (6.429, 7.413]: 0.214 (n=1189) | (7.413, 12.0]: 0.285 (n=1200)
+                           sess_value_max           10  1.248999e-03  4.920460e-05 2.389139e-03                     False                False                             15-18                                                                  PD 0.2612->0.2720 при 7->12; ЛР +0.0286; Spearman -0.1045; доля метки по бинам dev (-0.001, 10.0]: 0.318 (n=1805) | (10.0, 11.0]: 0.258 (n=1080) | (11.0, 12.0]: 0.226 (n=1915)
+                           sess_value_sum           11  1.049581e-03 -2.162290e-03 4.091796e-03                      True                False             9871             5-18                                                                                                                                                                                                                                              NaN
+                               n_sessions           12  8.894089e-04 -1.710951e-03 3.401317e-03                      True                False             9892             6-20                                                                                                                                                                                                                                              NaN
+                              n_fu_export           13  4.066850e-04 -1.736625e-04 1.019149e-03                      True                False             2692            12-19                                                                                                                                                                                                                                              NaN
+                               n_fu_share           14  1.030203e-05 -9.318842e-05 1.335867e-04                      True                False           146256            14-20                                                                                                                                                                                                                                              NaN
+                           n_feature_used           15  2.452865e-07 -2.700793e-04 2.959450e-04                      True                False       1617206687            15-20                                                                                                                                                                                                                                              NaN
+                                n_payment           16  0.000000e+00 -3.330669e-16 3.330669e-16                      True                 True                             10-14                                                                                                                                                                                                                                              NaN
+                         n_payment_failed           17  0.000000e+00 -3.330669e-16 3.330669e-16                      True                 True                             11-15                                                                                                                                                                                                                                              NaN
+                                n_fu_tags           18 -4.402893e-05 -4.386396e-04 3.017540e-04                      True                False                             13-20                                                                                                                                                                                                                                              NaN
+                              n_fu_search           19 -1.416530e-04 -4.805017e-04 2.127820e-04                      True                False                             11-17                                                                                                                                                                                                                                              NaN
+                                  country           20 -1.910782e-04 -4.293400e-03 3.877232e-03                      True                False                              5-19                                                                                                                                                                                                                                              NaN
+grp:n_sessions+sess_value_sum+active_days               4.412459e-02  2.955247e-02 5.794800e-02                     False                False                               NaN                                                                                                                                                                                                                                              NaN
+Ранги по фолдам и сегментам dev:
+                       holdout  fold0  fold1  fold2  fold3  fold4  plan=basic  plan=pro  Q1  Q2  Q3
+days_since_last_event        1      1      1      1      1      1           1         1   1   1   1
+n_support_ticket             2      3      2      2      3      2           2         3   2   2   2
+active_days                  3      2      3      3      2      3           3         4   3   3   3
+had_downgrade                4      4      4      5      4     12          12         2   4   5   5
+days_to_first_session        5     20      5      4      5      4           4         5  15   6   4
+device                       6     11      9     19      9      9          16         8   9  20   6
+channel                      7      8      8     10     20      5           8         7  16   9   8
+plan_T                       8      7      7      8      7      6          13        14   7   4   9
+sess_value_mean              9     10      6     20     10      8           5        10   8  10  10
+sess_value_max              10     18     18     16     15     17          18        16  17  17  17
+sess_value_sum              11      9     10      9      8     18           6         9   5   8  18
+n_sessions                  12      6     11      6     11     20           7        11   6  11  19
+n_fu_export                 13     13     15     15     19     13          15        17  12  14  14
+n_fu_share                  14     17     16     14     16     19          17        18  14  16  20
+n_feature_used              15     16     19     18     18     15          19        20  18  18  16
+n_payment                   16     14     13     11     13     10          10        12  10  12  12
+n_payment_failed            17     15     14     12     14     11          11        13  11  13  13
+n_fu_tags                   18     19     20     13     17     14          20        19  20  19  15
+n_fu_search                 19     12     12     17     12     16          14        15  13  15  11
+country                     20      5     17      7      6      7           9         6  19   7   7
+Сводка устойчивости:
+   segment    n  pos  auc_oof                                                                                         top5  top5_overlap  spearman_vs_holdout
+     fold0  960  257   0.7073                 days_since_last_event, active_days, n_support_ticket, had_downgrade, country             4                0.509
+     fold1  960  257   0.6944   days_since_last_event, n_support_ticket, active_days, had_downgrade, days_to_first_session             5                0.857
+     fold2  960  257   0.7206   days_since_last_event, n_support_ticket, active_days, days_to_first_session, had_downgrade             5                0.520
+     fold3  960  257   0.7367   days_since_last_event, active_days, n_support_ticket, had_downgrade, days_to_first_session             5                0.601
+     fold4  960  257   0.7267         days_since_last_event, n_support_ticket, active_days, days_to_first_session, channel             4                0.616
+plan=basic 3272  928   0.7036 days_since_last_event, n_support_ticket, active_days, days_to_first_session, sess_value_mean             4                0.600
+  plan=pro 1528  357   0.7342   days_since_last_event, had_downgrade, n_support_ticket, active_days, days_to_first_session             5                0.720
+        Q1 1585  430   0.7048          days_since_last_event, n_support_ticket, active_days, had_downgrade, sess_value_sum             4                0.672
+        Q2 1610  439   0.7245                  days_since_last_event, n_support_ticket, active_days, plan_T, had_downgrade             4                0.616
+        Q3 1605  416   0.7208   days_since_last_event, n_support_ticket, active_days, days_to_first_session, had_downgrade             5                0.651
+секунд: 102.3
+проверка (б) — признаки по данным, обрезанным после T: {'same_shape': True, 'rows': 6000, 'max_abs_diff': 0.0, 'non_numeric_equal': True, 'tol': 1e-09, 'ok': True}
+ОПРОВЕРЖЕНИЕ (перемешанные метки, dev, seed 42):
+  полный пайплайн (сетка 16 конфигураций, выбор по CV): kind=lr,C=0.1,log1p=False, OOF AUC 0.5181 [0.4989; 0.5355], 0.5 внутри: True
+  выбранная на реальных метках конфигурация: OOF AUC 0.5161 [0.4970; 0.5336], 0.5 внутри: True
+  пайплайн проверки D=7 (ЛР Б): OOF AUC 0.5036 [0.4843; 0.5233], 0.5 внутри: True

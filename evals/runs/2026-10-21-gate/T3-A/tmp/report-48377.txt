@@ -1,0 +1,5 @@
+TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+    at regionOf (src/lib/locale.js:10:19)
+    at buildRegionSection (src/screens/settings.js:23:18)
+    at buildSettingsScreen (src/screens/settings.js:11:7)
+    at openScreen (src/app.js:15:10)

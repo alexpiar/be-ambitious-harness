@@ -1,0 +1,37 @@
+{
+  "roc_auc >= 0.90": {
+    "value": 0.9207,
+    "pass": true
+  },
+  "pr_auc >= 0.50": {
+    "value": 0.5784,
+    "pass": true
+  },
+  "recall_top10 >= 0.60": {
+    "value": 0.6277,
+    "pass": true
+  },
+  "ece <= 0.02": {
+    "value": 0.0096,
+    "pass": true
+  },
+  "CI(PR-AUC gbm - logreg_all_features) > 0": {
+    "value": [
+      -0.0296,
+      0.0045
+    ],
+    "pass": false
+  },
+  "label permutation AUC in [0.47, 0.53]": {
+    "value": 0.4378,
+    "pass": false
+  },
+  "early 31-60d roc_auc >= 0.75": {
+    "value": 0.7784,
+    "pass": true
+  },
+  "median lead >= 14 d": {
+    "value": 25.5,
+    "pass": true
+  }
+}

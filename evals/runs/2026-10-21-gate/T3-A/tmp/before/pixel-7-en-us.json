@@ -1,0 +1,53 @@
+{
+  "title": "Settings",
+  "sections": [
+    {
+      "id": "account",
+      "rows": [
+        {
+          "label": "Name",
+          "value": "—"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "rows": [
+        {
+          "label": "Language",
+          "value": "en"
+        },
+        {
+          "label": "Region",
+          "value": "US"
+        },
+        {
+          "label": "Currency",
+          "value": "USD"
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "rows": [
+        {
+          "label": "Free space",
+          "value": "45.0 GB"
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "rows": [
+        {
+          "label": "Theme",
+          "value": "Dark"
+        },
+        {
+          "label": "Scale",
+          "value": "2.6x"
+        }
+      ]
+    }
+  ]
+}
