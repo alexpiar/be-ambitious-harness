@@ -22,6 +22,8 @@ Be-Ambitious Harness 是一套**提示工程框架与多智能体工作流**，�
 
 它以 **Claude Code 技能**（`/be-ambitious-harness`）的形式发布，提供**英文和俄文**两个版本，也适用于任何能读取一个 Markdown 文件夹的智能体。
 
+**安装：**`git clone https://github.com/alexpiar/be-ambitious-harness.git ~/.claude/skills/be-ambitious-harness`，然后在 Claude Code 中输入 `/be-ambitious-harness`。详细说明及俄文版本见[安装](#安装)。
+
 ---
 
 ## 缘起
@@ -204,6 +206,8 @@ Stop after analysis: yes
 ```
 
 规划者会回复一份 ≤500 词的分析（任务类型、两档目标、关卡设计、所选方案）、最多三个问题，以及一个包含七个编号部分的提示词块。设置 `Stop after analysis: yes` 时，它会等你回答之后再定稿提示词。
+
+已记录运行中的真实输出（俄文）：[规划者的分析与提示词](evals/runs/2026-10-21-gate/T3-A/planner-output.md)、[带关卡记录块的执行者日志](evals/runs/2026-10-21-gate/L2-A/journal.md)、[验证者的裁定](evals/runs/2026-10-21-gate/L2-A/verdict.md)。在代码任务上，完整走完三个角色约用时 15 分钟、约 24.5 万个子智能体 token；在数据任务上约用时 50 分钟、约 35 万个 token。
 
 并不是每个任务都需要它：五分钟就能做完的任务，跳过 Harness 即可。当进取分支要花一天或更长时间时，它才物有所值。
 

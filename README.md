@@ -22,6 +22,8 @@ Be-Ambitious Harness is a **prompt engineering framework and multi-agent workflo
 
 It ships as a **Claude Code skill** (`/be-ambitious-harness`) in **English and Russian**, and works with any agent that can read a folder of markdown files.
 
+**Install:** `git clone https://github.com/alexpiar/be-ambitious-harness.git ~/.claude/skills/be-ambitious-harness`, then `/be-ambitious-harness` in Claude Code. Details and the Russian version — [Install](#install).
+
 ---
 
 ## Why this exists
@@ -202,6 +204,8 @@ Stop after analysis: yes
 ```
 
 The planner replies with a ≤500-word analysis (type of task, two bars, gate design, chosen scheme), up to three questions, and a prompt block with seven numbered sections. With `Stop after analysis: yes` it waits for your answer before finalizing the prompt.
+
+Real outputs from the recorded runs (in Russian): [a planner's analysis and prompt](evals/runs/2026-10-21-gate/T3-A/planner-output.md), [a worker's journal with the gate block](evals/runs/2026-10-21-gate/L2-A/journal.md), [a verifier's verdict](evals/runs/2026-10-21-gate/L2-A/verdict.md). One pass through all three roles took about 15 minutes and ~245k sub-agent tokens on the code task, and about 50 minutes and ~350k tokens on the data task.
 
 Not every task needs this: for a five-minute task, skip the harness. It earns its cost when the ambitious branch would cost a day or more.
 

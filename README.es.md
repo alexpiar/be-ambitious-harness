@@ -22,6 +22,8 @@ Be-Ambitious Harness es un **framework de ingeniería de prompts y un flujo de t
 
 Se distribuye como **skill de Claude Code** (`/be-ambitious-harness`) en **inglés y ruso**, y funciona con cualquier agente capaz de leer una carpeta de archivos markdown.
 
+**Instalación:** `git clone https://github.com/alexpiar/be-ambitious-harness.git ~/.claude/skills/be-ambitious-harness` y luego `/be-ambitious-harness` en Claude Code. Detalles y la versión en ruso — en [Instalación](#instalación).
+
 ---
 
 ## Por qué existe
@@ -204,6 +206,8 @@ Stop after analysis: yes
 ```
 
 El planificador responde con un análisis de ≤500 palabras (tipo de tarea, dos listones, diseño de la comprobación de entrada, esquema elegido), hasta tres preguntas y un bloque de prompt con siete secciones numeradas. Con `Stop after analysis: yes`, espera tu respuesta antes de terminar el prompt.
+
+Salidas reales de las ejecuciones registradas (en ruso): [el análisis y el prompt de un planificador](evals/runs/2026-10-21-gate/T3-A/planner-output.md), [el registro de un ejecutor con el bloque de la comprobación de entrada](evals/runs/2026-10-21-gate/L2-A/journal.md), [el veredicto de un verificador](evals/runs/2026-10-21-gate/L2-A/verdict.md). Una pasada por los tres roles tomó unos 15 minutos y ~245 mil tokens de subagentes en la tarea de código, y unos 50 minutos y ~350 mil tokens en la tarea de datos.
 
 No todas las tareas lo necesitan: para una tarea de cinco minutos, prescinde del harness. Compensa su costo cuando la rama ambiciosa costaría un día o más.
 
