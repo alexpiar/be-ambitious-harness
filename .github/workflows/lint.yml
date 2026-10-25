@@ -20,3 +20,5 @@ jobs:
           persist-credentials: false
       - name: Lint harness markdown
         run: python3 -I tools/lint-harness.py
+      - name: Test harness tools
+        run: python3 -I -m unittest discover -s tools/tests
