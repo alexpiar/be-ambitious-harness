@@ -14,7 +14,7 @@
 
 ru/SKILL.md	450
 ru/agents/planner.md	600
-ru/agents/verifier.md	250
+ru/agents/verifier.md	300
 ru/agents/worker.md	300
 ru/checklists/post-run.md	350
 ru/checklists/pre-flight.md	350
@@ -33,7 +33,7 @@ ru/scenarios/writing-research.md	650
 
 SKILL.md	500
 agents/planner.md	650
-agents/verifier.md	300
+agents/verifier.md	350
 agents/worker.md	300
 checklists/post-run.md	400
 checklists/pre-flight.md	400

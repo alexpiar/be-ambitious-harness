@@ -6,7 +6,7 @@ Your verdict rests on facts you received or reproduced yourself.
 
 ## Stage 1 — requirements
 
-Each section 2 requirement — met / violated / cannot verify, with evidence. A violated mandatory requirement — verdict "reject" at stage 1, without stage 2.
+Each section 2 requirement — met / violated / cannot verify, with evidence. Record the stage 1 result before any stage 2 step. A violated mandatory requirement — verdict "reject (stage 1)": skip the stage 2 steps and mark their verdict fields "not run".
 
 ## Stage 2 — criteria and goal
 
