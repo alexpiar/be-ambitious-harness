@@ -18,11 +18,13 @@ Be-Ambitious Harness is a **prompt engineering framework and multi-agent workflo
 - **A gate check** — a cheap, observable test that decides whether the ambitious path is worth starting, with a pass criterion fixed *before* the test runs and three outcomes: passed, failed, insufficient data.
 - **Role isolation** — a planner writes the prompt, a worker executes it, a verifier grades the result seeing only the goal, the requirements, the gate and acceptance criteria, and the evidence log. Nobody grades their own work.
 - **Six scenario playbooks** — design/UX, data analysis, code, writing/research, decisions/plans, generic — each with domain-specific checks and traps.
-- **An eval suite** — 8 test tasks and a 30-criteria scorecard, so you can tell when the harness itself breaks. Two of the tasks have been run so far — see [Status](#status-what-has-been-tested).
+- **An eval suite** — 8 test tasks and a 31-criteria scorecard, so you can tell when the harness itself breaks. Two of the tasks have been run so far — see [Status](#status-what-has-been-tested).
 
 It ships as a **Claude Code skill** (`/be-ambitious-harness`) in **English and Russian**, and works with any agent that can read a folder of markdown files.
 
 **Install:** `git clone https://github.com/alexpiar/be-ambitious-harness.git ~/.claude/skills/be-ambitious-harness`, then `/be-ambitious-harness` in Claude Code. Details and the Russian version — [Install](#install).
+
+**Cost:** in v0.1 a pass through the three roles took about twice the sub-agent tokens of a single skill (≈592k vs ≈283k over the two recorded tasks; the single skill's own auditor is not counted). For a task under a day it does not pay off. The v0.2 figure will be added after its acceptance run.
 
 ---
 
@@ -243,8 +245,11 @@ be-ambitious-harness/
 │   └── report-format.md     worker report, verifier verdict, 5-line human summary
 ├── scenarios/               _index.md + six playbooks
 ├── checklists/              pre-flight.md, post-run.md
-├── evals/                   tasks.md (6 + 2 traps), scorecard.md (30 criteria)
+├── evals/                   tasks.md (6 + 2 traps), scorecard.md (31 criteria)
+│   ├── fixtures/            data generators for the eval tasks
 │   └── runs/                recorded runs: protocol, fixtures, logs, scores
+├── tools/                   lint-harness.py, gate-check.py and their tests
+├── .github/workflows/       CI: lint and tool tests on every push and PR
 ├── ru/                      the Russian originals — same layout
 ├── README.md · README.ru.md · README.zh-CN.md · README.es.md
 └── LICENSE · CITATION.cff

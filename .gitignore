@@ -16,3 +16,6 @@ evals/runs/**/events*.csv
 evals/runs/**/hidden-users.csv
 evals/fixtures/*.csv
 evals/fixtures/**/*.csv
+
+# Run working files: kept as a release asset, not in the tree
+evals/runs/**/tmp/
