@@ -6,8 +6,8 @@ authors:
   - given-names: Alexandr
     family-names: Chernov
     alias: alexpr
-version: 0.1.0
-date-released: 2026-10-21
+version: 0.1.1
+date-released: 2026-10-25
 license: MIT
 repository-code: "https://github.com/alexpiar/be-ambitious-harness"
 abstract: >-
