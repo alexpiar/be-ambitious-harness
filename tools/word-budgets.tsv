@@ -18,7 +18,7 @@ ru/agents/verifier.md	300
 ru/agents/worker.md	300
 ru/checklists/post-run.md	350
 ru/checklists/pre-flight.md	350
-ru/core/gate.md	400
+ru/core/gate.md	450
 ru/core/prompt-template.md	350
 ru/core/report-format.md	300
 ru/evals/scorecard.md	550
@@ -37,7 +37,7 @@ agents/verifier.md	350
 agents/worker.md	300
 checklists/post-run.md	400
 checklists/pre-flight.md	400
-core/gate.md	450
+core/gate.md	500
 core/prompt-template.md	400
 core/report-format.md	300
 evals/scorecard.md	600

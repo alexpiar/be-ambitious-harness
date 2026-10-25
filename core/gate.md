@@ -35,6 +35,7 @@ Ambiguity is the third outcome, not the first.
 
 - The check runs first. Before its outcome, only the check itself and work common to both branches are allowed.
 - The criterion stays as written. Revising it based on observed data is unavailable to the worker; if the criterion is inapplicable — the outcome is "insufficient data", and the report says so.
+- Both section 1 bars stay in the prompt as written, even with no progress on the ambitious one: the outcome picks the branch, not the bar. How to report a miss — `core/report-format.md`.
 - Missing materials listed as required for the check — a request to the human before work starts, not an outcome.
 - The outcome is logged before the first action of the ambitious branch.
 
