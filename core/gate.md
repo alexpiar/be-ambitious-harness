@@ -51,3 +51,5 @@ actual cost:            …
 outcome:                passed | failed | insufficient data
 consequence:            which branch and why
 ```
+
+An ambitious-branch log entry starts with a heading containing "ambitious branch"; the GATE block comes before the first such heading.
