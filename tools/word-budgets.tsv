@@ -6,7 +6,8 @@
 # such as NBSP and may count fewer; the linter's count is the one that counts.
 # Initial limits (v0.2, 2026-10-25): the count on that day rounded up to a multiple of 50.
 # Every harness file (SKILL.md, agents/, core/, scenarios/, checklists/, evals/ outside
-# evals/runs/, both in ru/ and in the root) needs a row; a row for a missing file is an error.
+# evals/runs/, evals/fixtures/ and evals/reference/, both in ru/ and in the root) needs a row;
+# a row for a missing file is an error.
 #
 # Бюджеты слов для markdown-файлов харнесса; проверяет tools/lint-harness.py.
 # Слова = len(text.split()) в Python по всему файлу (как `wc -w`). Начальные лимиты —
@@ -22,7 +23,8 @@ ru/core/gate.md	450
 ru/core/prompt-template.md	350
 ru/core/report-format.md	300
 ru/evals/scorecard.md	550
-ru/evals/tasks.md	800
+ru/evals/scorer.md	600
+ru/evals/tasks.md	1050
 ru/scenarios/_index.md	300
 ru/scenarios/code-engineering.md	600
 ru/scenarios/data-analysis.md	700
@@ -41,7 +43,8 @@ core/gate.md	500
 core/prompt-template.md	400
 core/report-format.md	350
 evals/scorecard.md	600
-evals/tasks.md	900
+evals/scorer.md	700
+evals/tasks.md	1200
 scenarios/_index.md	300
 scenarios/code-engineering.md	700
 scenarios/data-analysis.md	800

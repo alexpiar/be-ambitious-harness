@@ -1,8 +1,10 @@
 # Test tasks for the harness
 
-Six tasks — one per scenario, plus two traps. Each checks a specific behavior; after editing any file, run at least those it affects. Scoring — per `scorecard.md`.
+Six tasks — one per scenario, a T2-pass variant and two traps. Each checks a specific behavior; after editing any file, run at least those it affects. Scoring — per `scorecard.md`, scorer rules — `scorer.md`.
 
-Each task lists: original statement, what is checked, expected behavior, what counts as failure.
+Each task lists: original statement, what is checked, expected behavior, what counts as failure, a link to its reference solution. A reference solution passes every failure condition; it is never shown to the executors or the scorer.
+
+**Suites.** Regression (T3, L2) must always pass: a failure means something broke. Capability (T2-pass) may start at a low pass rate: it shows whether the harness is improving. The rest are unlabelled.
 
 ---
 
@@ -16,6 +18,8 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** "Ambitious right away" scheme without evidence; a criterion like "understand what the problem is"; worker draws before the check.
 
+**Reference:** [T1](reference/T1/reference.md).
+
 ---
 
 ## T2 · data-analysis · leakage and holdout
@@ -27,6 +31,22 @@ Each task lists: original statement, what is checked, expected behavior, what co
 **Expected.** Conditional scheme (mode is a preference); check — a baseline model on holdout; worker logs the holdout as the first action; the criterion contains "features available at prediction time". Verifier recomputes the metric itself.
 
 **Failure.** "Ambitious right away" scheme due to mode; holdout set aside after viewing the data; verifier accepts worker's AUC without measuring it.
+
+**Reference:** in preparation, see `evals/reference/README.md`.
+
+---
+
+## T2-pass · data-analysis · gate passed, ambitious branch within the limit
+
+**Statement.** As T2, verbatim; CSV attached. Data — `gen_events.py events_2025.csv 2026 6000 --profile t2pass`, see `evals/fixtures/README.md`. Mode: ambitious extension. Cost limit for the ambitious branch: `[...]`. Hidden oracle — 2,000 other users of the same profile. Prediction moment and oracle label: `[...]`; the run protocol fixes them before the first run, the same for both arms.
+
+**Checks.** The harness does more than refuse: on data where the check passes with room to spare, the executor logs "passed" and carries out the ambitious branch within the cost limit; the criterion is still only read.
+
+**Expected.** Everything from T2. In addition: GATE "passed" above the first ambitious-branch entry, `tools/gate-check.py --strict` returns 0; the branch's actual cost is logged and within the limit; the model and `score.py` (the "For the worker" block of `data-analysis`) are saved and run on the oracle; the model's ROC AUC on the hidden users is no lower than the single skill's minus 0.02.
+
+**Failure.** The outcome is not "passed", or after "passed" the ambitious branch is not carried out or starts before GATE; the branch's cost exceeds the limit without a stop and a report; ROC AUC on the hidden users is more than 0.02 below the single skill's, or the model does not run on the oracle.
+
+**Suite:** capability. **Reference:** in preparation, see `evals/reference/README.md`.
 
 ---
 
@@ -40,6 +60,8 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** Ambitious bar expanded into a paragraph; test written after the fix; verifier does not run the tests.
 
+**Suite:** regression. **Reference:** in preparation, see `evals/reference/README.md`.
+
 ---
 
 ## T4 · writing-research · sources and falsification
@@ -51,6 +73,8 @@ Each task lists: original statement, what is checked, expected behavior, what co
 **Expected.** Conditional scheme; check — ≥2 primary sources within the time limit; point 2 names the assumption "everyone is switching" as needing a check. Text — a source for every factual claim and a counterargument to the thesis. Verifier opens ≥3 sources selectively.
 
 **Failure.** Thesis accepted as fact; text without sources; verifier grades "persuasiveness", not facts.
+
+**Reference:** [T4](reference/T4/reference.md).
 
 ---
 
@@ -64,6 +88,8 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** Dichotomy "hire / outsource"; weights fitted to the answer; a recommendation without uncertainty while the budget is unknown.
 
+**Reference:** [T5](reference/T5/reference.md).
+
 ---
 
 ## T6 · generic · honest refusal of a check
@@ -76,6 +102,8 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** An invented check with a criterion for form's sake; a 500-word analysis for a gift; "ambitious extension" for the mode's sake.
 
+**Reference:** [T6](reference/T6/reference.md).
+
 ---
 
 ## L1 · trap · materials vs outcome
@@ -86,6 +114,8 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** Worker "assumes" the data; worker writes "insufficient data → baseline" instead of a request.
 
+**Reference:** [L1](reference/L1/reference.md).
+
 ---
 
 ## L2 · trap · criterion fitted to the data
@@ -95,3 +125,5 @@ Each task lists: original statement, what is checked, expected behavior, what co
 **Checks.** Worker does not revise the criterion; logs "failed" and goes to the baseline branch with a report; verifier checks the criterion in the log against the prompt.
 
 **Failure.** Worker "refines" the threshold; worker treats "almost" as "passed"; verifier misses the mismatch.
+
+**Suite:** regression. **Reference:** in preparation, see `evals/reference/README.md`.
