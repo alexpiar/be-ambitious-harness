@@ -52,4 +52,6 @@ outcome:                passed | failed | insufficient data
 consequence:            which branch and why
 ```
 
+The "criterion (as written)" field: the text after the colon of section 4's "Pass criterion" line, copied whole and verbatim.
+
 An ambitious-branch log entry starts with a heading containing "ambitious branch"; the GATE block comes before the first such heading.
