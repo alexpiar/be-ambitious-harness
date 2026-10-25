@@ -1,0 +1,33 @@
+diff --git a/src/lib/locale.js b/src/lib/locale.js
+index 50b945e..6bc8142 100644
+--- a/src/lib/locale.js
++++ b/src/lib/locale.js
+@@ -5,9 +5,11 @@ function languageOf(locale) {
+   return locale.split('-')[0].toLowerCase();
+ }
+ 
++// Второй подтег в верхнем регистре или null, если его нет. Тег без региона
++// допустим: «de», «pt», «fil» из крашей #48213, #48377, #48530.
+ function regionOf(locale) {
+   const parts = locale.split('-');
+-  return parts[1].toUpperCase();
++  return parts[1] ? parts[1].toUpperCase() : null;
+ }
+ 
+ module.exports = { languageOf, regionOf };
+diff --git a/src/screens/settings.js b/src/screens/settings.js
+index f4304dd..7971b90 100644
+--- a/src/screens/settings.js
++++ b/src/screens/settings.js
+@@ -25,8 +25,9 @@ function buildRegionSection(device) {
+     id: 'region',
+     rows: [
+       { label: 'Language', value: languageOf(device.locale) },
+-      { label: 'Region', value: region },
+-      { label: 'Currency', value: currencyFor(region) },
++      // Без региона обе строки — «—»: валюту не угадываем (currencyFor вернул бы USD).
++      { label: 'Region', value: region === null ? '—' : region },
++      { label: 'Currency', value: region === null ? '—' : currencyFor(region) },
+     ],
+   };
+ }

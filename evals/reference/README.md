@@ -22,19 +22,35 @@
 | Задача | Папка | Статус | Синтетика | `tools/gate-check.py` |
 |---|---|---|---|---|
 | T1 · design-ux | [T1/](T1/reference.md) | готов | воронка и 10 записей сессий (`T1/materials/`) | 0, в том числе `--strict` |
-| T2 · data-analysis | — | будет добавлен отдельно | | |
-| T2-pass · data-analysis | — | будет добавлен отдельно | | |
-| T3 · code-engineering | — | будет добавлен отдельно | | |
+| T2 · data-analysis | [T2/](T2/reference.md) | готов; оракул (б) 0.871 | нет: данные из генератора (l2, seed 2025) | 0, `--strict` |
+| T2-pass · data-analysis | [T2-pass/](T2-pass/reference.md) | готов; оракул (б) 0.913 | нет: данные из генератора (t2pass, seed 2026) | 0, `--strict` |
+| T3 · code-engineering | [T3/](T3/reference.md) | готов; оракул 9/9 | нет: фикстура прогона 21.10 | 0, `--strict` (проверки нет ни в плане, ни в журнале) |
 | T4 · writing-research | [T4/](T4/reference.md) | готов | нет: поиск и проверка источников выполнены 25.10.2026 | 0, `--strict` |
 | T5 · decision-plan | [T5/](T5/reference.md) | готов | нет: стоимость выражена через параметры, которые знает человек | 0 (проверки нет ни в плане, ни в журнале) |
 | T6 · generic | [T6/](T6/reference.md) | готов | ответы двух людей | 0, `--strict` |
 | L1 · ловушка | [L1/](L1/reference.md) | готов | нет | 1 — ожидаемо: проверка не начиналась |
-| L2 · ловушка | — | будет добавлен отдельно | | |
+| L2 · ловушка | [L2/](L2/reference.md) | готов; оракул (а) 0.564 | нет: данные из генератора (l2, seed 2025) | 0, `--strict` (и против промпта L2-A) |
 
-Эталоны T2, T2-pass, T3 и L2 требуют вычислений на фикстурах и скрытых оракулах; их добавит отдельная работа.
+Эталоны T2, T2-pass, T3 и L2 вычисляются на фикстурах и проверены скрытыми оракулами. Каждый воспроизводится одной командой: `bash evals/reference/T3/check.sh` и `OMP_NUM_THREADS=2 python -I evals/reference/<ID>/run.py`. CSV в репозитории нет: `run.py` генерирует данные и сверяет sha256. `score.py` и `ref_lib.py` в T2, T2-pass и L2 — один и тот же файл, различаются модели (`model*.json`, коэффициенты логистической регрессии).
+
+## Скрытый оракул для задач на данных
+
+`oracle_churn.py` — один для T2, T2-pass и L2 и для любого исполнителя, сдавшего `score.py` по контракту сценария `data-analysis`. Оракул генерирует 2000 скрытых пользователей (l2 — seed 9001, t2pass — seed 9002), строит `points.csv` и запускает `score.py` исполнителя без правок, отдельным процессом в пустом каталоге. sha256 файлов папки исполнителя до и после сверяются. ROC AUC считается с 95% бутстрэп-ДИ по пользователям.
+- **(а)** D = 7 от регистрации, метка — отмена в (asof, asof + 60 суток], популяция — без отмены до asof; `--days 7 14` добавляет D = 14.
+- **(б)** срезы каждые 14 дней с 2025-06-01 по 2025-11-30, метка — отмена в ближайшие 30 суток, популяция — активные на asof.
+- **Заглядывание вперёд.** События обрезаются по asof, `score.py` запускается заново, оценки должны совпасть до 1e-12. `--self-test` проверяет сам оракул: заведомо подглядывающий `score.py` пойман (max |Δ| = 1).
+- **`--vs`** — второй `score.py` (другое плечо или модель) на тех же точках, с парной разностью и ДИ. Этим проверяется критерий T2-pass «не ниже одиночного скилла минус 0.02».
+
+| Эталон | (а) D = 7 | (б) срезы | Сравнение по (б), `--vs` |
+|---|---|---|---|
+| L2 (модель D = 14) | 0.564 [0.533; 0.592] | 0.839 [0.824; 0.854] | — ; на своём D = 14 — 0.730 [0.706; 0.754] |
+| T2 (срезы, без прокси метки) | 0.558 [0.528; 0.585] | 0.871 [0.861; 0.881] | с прокси метки 0.905: −0.034 [−0.039; −0.028] |
+| T2-pass (срезы, этап 3) | 0.737 [0.714; 0.761] | 0.913 [0.903; 0.924] | базовая D = 14 — 0.873: +0.040 [+0.030; +0.049] |
+
+Заглядывания вперёд нет ни у одного эталона: max |Δ| ≤ 1e-16 в 16 прогонах на обрезанных событиях. Полные выводы — `<ID>/oracle.txt`.
 
 ---
 
 ## In English, briefly
 
-A reference solution passes every failure condition of its task in `evals/tasks.md` and the hidden oracle, if there is one: it proves the task is solvable and the graders accept a correct answer. References describe what is done and delivered, not which role did it. Use them before a run to check the task and graders; never show them to the arms or the scorer. Ready: T1, T4, T5, T6, L1 (in Russian; synthetic materials are labelled). T2, T2-pass, T3 and L2 will be added separately.
+A reference solution passes every failure condition of its task in `evals/tasks.md` and the hidden oracle, if there is one: it proves the task is solvable and the graders accept a correct answer. References describe what is done and delivered, not which role did it. Use them before a run to check the task and graders; never show them to the arms or the scorer. Ready: T1, T4, T5, T6, L1 (in Russian; synthetic materials are labelled); T2, T2-pass, T3, L2, computed on the fixtures and checked by hidden oracles: T3 9/9 hidden tests; data tasks by `oracle_churn.py`, which runs the delivered `score.py` unchanged on 2000 hidden users under two protocols (day 7 after signup; as-of snapshots every 14 days) and checks it does not look ahead.

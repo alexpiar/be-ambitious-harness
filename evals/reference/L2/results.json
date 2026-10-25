@@ -1,0 +1,700 @@
+{
+ "data_sha256": "2284d9bc94351ba7a362d45a52b3b83e534bb0a342446a5321cc78568b1d93f1",
+ "holdout_sha256": "6d106d9fb8221afd7bd4ca9864cae1f231be4d8a43bf2f41aef8abe986d4724b",
+ "quality_dev": {
+  "rows": 338975,
+  "users": 4800,
+  "signups_per_user": [
+   1
+  ],
+  "cancels_per_user_max": 1,
+  "full_duplicates": 0,
+  "sorted_by_ts": true,
+  "static_constant": true,
+  "events_before_signup": {
+   "plan_downgrade": 6,
+   "support_ticket": 2
+  },
+  "events_after_cancel_except_exit_survey": 0,
+  "sessions_per_active_user_by_month": [
+   6.85,
+   6.42,
+   7.17,
+   7.21,
+   7.54,
+   7.49,
+   7.89,
+   7.99,
+   8.13,
+   8.64,
+   8.74,
+   9.29
+  ],
+  "charge_amount_matches_plan_column": 1.0,
+  "precursors": {
+   "payment_failed": {
+    "base": "все",
+    "churned_with": 826,
+    "churned": 2131,
+    "retained_with": 0,
+    "retained": 2669,
+    "p_cancel_given_event": 1.0
+   },
+   "plan_downgrade": {
+    "base": "pro",
+    "churned_with": 177,
+    "churned": 609,
+    "retained_with": 0,
+    "retained": 919,
+    "p_cancel_given_event": 1.0
+   },
+   "support_ticket": {
+    "base": "все",
+    "churned_with": 751,
+    "churned": 2131,
+    "retained_with": 211,
+    "retained": 2669,
+    "p_cancel_given_event": 0.7806652806652806
+   }
+  },
+  "retained_with_missing_payments": 0,
+  "churned_in_data": 2131
+ },
+ "gate": {
+  "population": 4800,
+  "positives": 1176,
+  "auc_A": 0.5306463852097131,
+  "auc_B": 0.5482964571038128,
+  "auc_B_ci": [
+   0.5291574403283478,
+   0.5677154701993122
+  ],
+  "diff": 0.017650071894099728,
+  "diff_ci": [
+   0.005611677978592547,
+   0.030124551650406735
+  ],
+  "applicable": true,
+  "passed": false,
+  "outcome": "не пройдена"
+ },
+ "stage2_cv": {
+  "grid": {
+   "LR C=0.01 log1p=False": 0.7168207404619447,
+   "LR C=0.01 log1p=True": 0.7082954098886927,
+   "LR C=0.1 log1p=False": 0.7160024575056317,
+   "LR C=0.1 log1p=True": 0.7076371968938014,
+   "LR C=1.0 log1p=False": 0.7154460870864721,
+   "LR C=1.0 log1p=True": 0.7069207565132202,
+   "HGB 0: learning_rate=0.05, max_iter=200, max_leaf_nodes=15, min_samples_leaf=40": 0.7074678282624217,
+   "HGB 1: learning_rate=0.05, max_iter=200, max_leaf_nodes=31, min_samples_leaf=20": 0.7000698507231377,
+   "HGB 2: learning_rate=0.1, max_iter=100, max_leaf_nodes=15, min_samples_leaf=40": 0.7051706139889634,
+   "HGB 3: learning_rate=0.03, max_iter=300, max_leaf_nodes=7, min_samples_leaf=80": 0.6980921121818111
+  },
+  "chosen": "LR C=0.01 log1p=False",
+  "population": 4800,
+  "positives": 1285
+ },
+ "refute": {
+  "stage2_shuffled_oof_auc": 0.5161485794621162,
+  "ci": [
+   0.4984402869402237,
+   0.5346055318078831
+  ],
+  "gate_shuffled_auc_B": 0.5154675556756919,
+  "gate_shuffled_ci": [
+   0.4975097975662412,
+   0.5338115062037951
+  ]
+ },
+ "single_feature_auc_dev_D14": {
+  "days_since_last_event": 0.6829328447841657,
+  "active_days": 0.6462780413015924,
+  "n_sessions": 0.6227199716611963,
+  "sess_value_sum": 0.6205586950866493,
+  "n_feature_used": 0.5878000343165201,
+  "sess_value_max": 0.5654003132766188,
+  "n_fu_search": 0.5517798650585872,
+  "n_fu_export": 0.550849112475162,
+  "n_fu_tags": 0.5445466068157037,
+  "n_fu_share": 0.5424280598435831,
+  "sess_value_mean": 0.5230770848669681,
+  "n_support_ticket": 0.521572360810534,
+  "days_to_first_session": 0.5141501403102877,
+  "had_downgrade": 0.5070038910505836,
+  "n_payment": 0.5,
+  "n_payment_failed": 0.5
+ },
+ "truncation_dev_D14": {
+  "points": 4800,
+  "runs": 1,
+  "max_abs_diff": 0.0,
+  "static_equal": true
+ },
+ "holdout": {
+  "модель D=14": {
+   "auc": 0.7395461954222178,
+   "auc_ci": [
+    0.70719901648316,
+    0.7698303413370552
+   ],
+   "ap": 0.511726424720675,
+   "ap_ci": [
+    0.4602694483770011,
+    0.5676063639650519
+   ],
+   "top20": 0.5083333333333333,
+   "top20_ci": [
+    0.44166666666666665,
+    0.5625
+   ],
+   "lift": 2.013201320132013,
+   "lift_ci": [
+    1.7715140962029523,
+    2.214678024749281
+   ]
+  },
+  "ЛР на статике": {
+   "auc": 0.5372768046035373,
+   "auc_ci": [
+    0.4977157204757996,
+    0.5729223179280865
+   ],
+   "ap": 0.27481618167056404,
+   "ap_ci": [
+    0.2421693914970879,
+    0.31501721352817036
+   ],
+   "top20": 0.2970833333333333,
+   "top20_ci": [
+    0.2394505243958048,
+    0.3547643849206349
+   ],
+   "lift": 1.1765676567656764,
+   "lift_ci": [
+    0.9674708299766384,
+    1.367872641868249
+   ]
+  },
+  "правило −n_sessions": {
+   "auc": 0.6302452987773693,
+   "auc_ci": [
+    0.5958307493617881,
+    0.6646676089837459
+   ],
+   "ap": 0.33824737082872985,
+   "ap_ci": [
+    0.3020562033009951,
+    0.3851601764362223
+   ],
+   "top20": 0.3563333333333334,
+   "top20_ci": [
+    0.30172503591954025,
+    0.41329456521739133
+   ],
+   "lift": 1.4112211221122115,
+   "lift_ci": [
+    1.2175278026571132,
+    1.6171996997080473
+   ]
+  },
+  "базовый уровень": {
+   "auc": 0.5,
+   "auc_ci": [
+    0.5,
+    0.5
+   ],
+   "ap": 0.2525,
+   "ap_ci": [
+    0.22999999999999998,
+    0.27666666666666667
+   ],
+   "top20": 0.2525,
+   "top20_ci": [
+    0.23,
+    0.27666666666666667
+   ],
+   "lift": 1.0,
+   "lift_ci": [
+    1.0,
+    1.0000000000000002
+   ]
+  },
+  "модель D=14 − ЛР на статике": {
+   "diff_auc": 0.20226939081868045,
+   "diff_auc_ci": [
+    0.15844856471074414,
+    0.2476620375155157
+   ]
+  },
+  "модель D=14 − правило −n_sessions": {
+   "diff_auc": 0.10930089664484843,
+   "diff_auc_ci": [
+    0.07823460055621524,
+    0.139265120145487
+   ]
+  },
+  "_base_rate": 0.2525,
+  "population": 1200,
+  "positives": 303
+ },
+ "truncation_holdout_D14": {
+  "points": 1200,
+  "runs": 1,
+  "max_abs_diff": 0.0,
+  "static_equal": true
+ },
+ "holdout_ids_in_training": 0,
+ "importance": {
+  "holdout": {
+   "n_sessions": {
+    "drop": 0.0008894088962964064,
+    "ci": [
+     -0.0017384538062065163,
+     0.003695946446827402
+    ],
+    "zero_in_ci": true
+   },
+   "sess_value_sum": {
+    "drop": 0.0010495809893140695,
+    "ci": [
+     -0.002049583055234666,
+     0.0041441770321254566
+    ],
+    "zero_in_ci": true
+   },
+   "sess_value_mean": {
+    "drop": 0.001263348185431723,
+    "ci": [
+     -0.0016551434313981732,
+     0.004433942970305454
+    ],
+    "zero_in_ci": true
+   },
+   "sess_value_max": {
+    "drop": 0.0012489989244185429,
+    "ci": [
+     -6.21886509433289e-05,
+     0.0023857714751732984
+    ],
+    "zero_in_ci": true
+   },
+   "active_days": {
+    "drop": 0.017525230783948076,
+    "ci": [
+     0.009043490666119416,
+     0.026509532350717534
+    ],
+    "zero_in_ci": false
+   },
+   "n_feature_used": {
+    "drop": 2.452865129898285e-07,
+    "ci": [
+     -0.00026400427018626326,
+     0.0002698390992367627
+    ],
+    "zero_in_ci": true
+   },
+   "n_fu_export": {
+    "drop": 0.0004066850386263976,
+    "ci": [
+     -0.00020697280081306003,
+     0.0010111222338339912
+    ],
+    "zero_in_ci": true
+   },
+   "n_fu_tags": {
+    "drop": -4.402892909138867e-05,
+    "ci": [
+     -0.0004409324536481324,
+     0.00032417573347950636
+    ],
+    "zero_in_ci": true
+   },
+   "n_fu_search": {
+    "drop": -0.00014165296128287874,
+    "ci": [
+     -0.0005074713546607129,
+     0.00020608170367645
+    ],
+    "zero_in_ci": true
+   },
+   "n_fu_share": {
+    "drop": 1.0302033547793243e-05,
+    "ci": [
+     -0.00010153619258199131,
+     0.0001318489857509985
+    ],
+    "zero_in_ci": true
+   },
+   "n_support_ticket": {
+    "drop": 0.031226567472800726,
+    "ci": [
+     0.018933699910381938,
+     0.044479874533181016
+    ],
+    "zero_in_ci": false
+   },
+   "had_downgrade": {
+    "drop": 0.01288465524367377,
+    "ci": [
+     0.005371576498250449,
+     0.022225369815451528
+    ],
+    "zero_in_ci": false
+   },
+   "days_since_last_event": {
+    "drop": 0.11538535124415461,
+    "ci": [
+     0.0944333426429583,
+     0.13656405828265558
+    ],
+    "zero_in_ci": false
+   },
+   "days_to_first_session": {
+    "drop": 0.0046976046545567085,
+    "ci": [
+     0.0003922189924684072,
+     0.00845949853940657
+    ],
+    "zero_in_ci": false
+   },
+   "plan": {
+    "drop": 0.0019291784250888844,
+    "ci": [
+     -0.0017222813779719404,
+     0.005332441376676985
+    ],
+    "zero_in_ci": true
+   },
+   "device": {
+    "drop": 0.0032979998111293263,
+    "ci": [
+     0.00018662064661413582,
+     0.006316549620419395
+    ],
+    "zero_in_ci": false
+   },
+   "country": {
+    "drop": -0.0005187196534592875,
+    "ci": [
+     -0.005386255540360829,
+     0.003517228358193389
+    ],
+    "zero_in_ci": true
+   },
+   "channel": {
+    "drop": 0.003145922173042326,
+    "ci": [
+     -0.0009997882056668266,
+     0.006880721307553928
+    ],
+    "zero_in_ci": true
+   },
+   "группа: active_days + n_sessions + sess_value_sum": {
+    "drop": 0.04404806143936557,
+    "ci": [
+     0.029981832378498777,
+     0.058109197894255164
+    ],
+    "zero_in_ci": false
+   }
+  },
+  "correlated_groups": [
+   [
+    "active_days",
+    "n_sessions",
+    "sess_value_sum"
+   ]
+  ],
+  "coef": {
+   "n_sessions": -0.06414786795903993,
+   "sess_value_sum": -0.07402986300078346,
+   "sess_value_mean": -0.05807544500260482,
+   "sess_value_max": 0.028601062230255877,
+   "active_days": -0.2163602836042362,
+   "n_feature_used": 0.004770345380203114,
+   "n_fu_export": 0.010897237230615963,
+   "n_fu_tags": -0.006804112083759604,
+   "n_fu_search": 0.005960313701926769,
+   "n_fu_share": 0.0012094098934925157,
+   "n_payment": 0.0,
+   "n_payment_failed": 0.0,
+   "n_support_ticket": 0.325136998624066,
+   "had_downgrade": 0.2168153860245352,
+   "days_since_last_event": 0.47605618912195174,
+   "days_to_first_session": -0.11539526097397386,
+   "plan=basic": 0.03767144248196009,
+   "plan=pro": -0.03767144248196009,
+   "device=android": 0.02754834184500875,
+   "device=ios": 0.013022052645984463,
+   "device=web": -0.040426381501133195,
+   "country=BR": 0.005498632045164632,
+   "country=DE": -0.04140276217468338,
+   "country=FR": -0.0327195594190326,
+   "country=GB": 0.014539642690230612,
+   "country=IN": 0.06173223629458285,
+   "country=US": -0.013067348149457043,
+   "channel=ads": 0.034556763572941386,
+   "channel=organic": 0.009789143229697653,
+   "channel=referral": -0.0605662618916231
+  },
+  "constant_at_T": [
+   "n_payment",
+   "n_payment_failed"
+  ],
+  "stability": {
+   "fold0": {
+    "n": 960,
+    "ranks": {
+     "days_since_last_event": 1,
+     "active_days": 2,
+     "n_support_ticket": 3,
+     "had_downgrade": 4,
+     "channel": 5,
+     "plan": 6,
+     "sess_value_mean": 7,
+     "n_sessions": 8,
+     "country": 9,
+     "device": 10,
+     "sess_value_sum": 11,
+     "n_fu_search": 12,
+     "n_fu_export": 13,
+     "n_feature_used": 14,
+     "sess_value_max": 15,
+     "n_fu_share": 16,
+     "n_fu_tags": 17,
+     "days_to_first_session": 18
+    },
+    "top5_overlap": 4,
+    "spearman": 0.6367389060887513
+   },
+   "fold1": {
+    "n": 960,
+    "ranks": {
+     "days_since_last_event": 1,
+     "active_days": 2,
+     "n_support_ticket": 3,
+     "had_downgrade": 4,
+     "days_to_first_session": 5,
+     "sess_value_mean": 6,
+     "channel": 7,
+     "n_sessions": 8,
+     "sess_value_sum": 9,
+     "sess_value_max": 10,
+     "n_fu_search": 11,
+     "device": 12,
+     "plan": 13,
+     "n_fu_export": 14,
+     "n_fu_share": 15,
+     "n_feature_used": 16,
+     "country": 17,
+     "n_fu_tags": 18
+    },
+    "top5_overlap": 5,
+    "spearman": 0.8596491228070176
+   },
+   "fold2": {
+    "n": 960,
+    "ranks": {
+     "days_since_last_event": 1,
+     "active_days": 2,
+     "n_support_ticket": 3,
+     "days_to_first_session": 4,
+     "n_sessions": 5,
+     "plan": 6,
+     "had_downgrade": 7,
+     "sess_value_sum": 8,
+     "sess_value_max": 9,
+     "country": 10,
+     "n_fu_tags": 11,
+     "n_fu_export": 12,
+     "n_fu_share": 13,
+     "n_feature_used": 14,
+     "n_fu_search": 15,
+     "device": 16,
+     "sess_value_mean": 17,
+     "channel": 18
+    },
+    "top5_overlap": 4,
+    "spearman": 0.5294117647058824
+   },
+   "fold3": {
+    "n": 960,
+    "ranks": {
+     "days_since_last_event": 1,
+     "active_days": 2,
+     "n_support_ticket": 3,
+     "had_downgrade": 4,
+     "days_to_first_session": 5,
+     "plan": 6,
+     "country": 7,
+     "device": 8,
+     "sess_value_sum": 9,
+     "n_sessions": 10,
+     "sess_value_mean": 11,
+     "n_fu_search": 12,
+     "sess_value_max": 13,
+     "n_fu_share": 14,
+     "n_fu_tags": 15,
+     "n_fu_export": 16,
+     "n_feature_used": 17,
+     "channel": 18
+    },
+    "top5_overlap": 5,
+    "spearman": 0.6780185758513931
+   },
+   "fold4": {
+    "n": 960,
+    "ranks": {
+     "days_since_last_event": 1,
+     "n_support_ticket": 2,
+     "active_days": 3,
+     "days_to_first_session": 4,
+     "plan": 5,
+     "device": 6,
+     "channel": 7,
+     "country": 8,
+     "sess_value_mean": 9,
+     "sess_value_sum": 10,
+     "n_fu_tags": 11,
+     "had_downgrade": 12,
+     "n_feature_used": 13,
+     "n_fu_search": 14,
+     "n_fu_export": 15,
+     "sess_value_max": 16,
+     "n_fu_share": 17,
+     "n_sessions": 18
+    },
+    "top5_overlap": 4,
+    "spearman": 0.6924664602683178
+   },
+   "plan=basic": {
+    "n": 3272,
+    "ranks": {
+     "days_since_last_event": 1,
+     "active_days": 2,
+     "n_support_ticket": 3,
+     "days_to_first_session": 4,
+     "sess_value_sum": 5,
+     "n_sessions": 6,
+     "plan": 7,
+     "sess_value_mean": 8,
+     "had_downgrade": 9,
+     "sess_value_max": 10,
+     "n_fu_search": 11,
+     "n_fu_export": 12,
+     "channel": 13,
+     "device": 14,
+     "n_fu_share": 15,
+     "n_feature_used": 16,
+     "country": 17,
+     "n_fu_tags": 18
+    },
+    "top5_overlap": 4,
+    "spearman": 0.7461300309597524
+   },
+   "plan=pro": {
+    "n": 1528,
+    "ranks": {
+     "days_since_last_event": 1,
+     "n_support_ticket": 2,
+     "active_days": 3,
+     "had_downgrade": 4,
+     "days_to_first_session": 5,
+     "country": 6,
+     "channel": 7,
+     "device": 8,
+     "sess_value_sum": 9,
+     "sess_value_mean": 10,
+     "n_sessions": 11,
+     "plan": 12,
+     "sess_value_max": 13,
+     "n_fu_search": 14,
+     "n_fu_share": 15,
+     "n_fu_export": 16,
+     "n_feature_used": 17,
+     "n_fu_tags": 18
+    },
+    "top5_overlap": 5,
+    "spearman": 0.7874097007223942
+   },
+   "Q1 регистрации": {
+    "n": 1602,
+    "ranks": {
+     "days_since_last_event": 1,
+     "active_days": 2,
+     "n_support_ticket": 3,
+     "had_downgrade": 4,
+     "sess_value_sum": 5,
+     "plan": 6,
+     "n_sessions": 7,
+     "device": 8,
+     "sess_value_mean": 9,
+     "country": 10,
+     "sess_value_max": 11,
+     "n_fu_share": 12,
+     "n_fu_search": 13,
+     "n_fu_export": 14,
+     "days_to_first_session": 15,
+     "n_feature_used": 16,
+     "channel": 17,
+     "n_fu_tags": 18
+    },
+    "top5_overlap": 4,
+    "spearman": 0.6264189886480908
+   },
+   "Q2 регистрации": {
+    "n": 1609,
+    "ranks": {
+     "days_since_last_event": 1,
+     "active_days": 2,
+     "n_support_ticket": 3,
+     "sess_value_sum": 4,
+     "days_to_first_session": 5,
+     "plan": 6,
+     "had_downgrade": 7,
+     "sess_value_mean": 8,
+     "country": 9,
+     "n_sessions": 10,
+     "channel": 11,
+     "sess_value_max": 12,
+     "n_fu_search": 13,
+     "n_fu_export": 14,
+     "n_feature_used": 15,
+     "n_fu_share": 16,
+     "n_fu_tags": 17,
+     "device": 18
+    },
+    "top5_overlap": 4,
+    "spearman": 0.653250773993808
+   },
+   "Q3 регистрации": {
+    "n": 1589,
+    "ranks": {
+     "days_since_last_event": 1,
+     "n_support_ticket": 2,
+     "active_days": 3,
+     "days_to_first_session": 4,
+     "had_downgrade": 5,
+     "plan": 6,
+     "device": 7,
+     "channel": 8,
+     "n_sessions": 9,
+     "country": 10,
+     "sess_value_mean": 11,
+     "n_fu_search": 12,
+     "sess_value_max": 13,
+     "n_fu_export": 14,
+     "n_feature_used": 15,
+     "n_fu_tags": 16,
+     "n_fu_share": 17,
+     "sess_value_sum": 18
+    },
+    "top5_overlap": 5,
+    "spearman": 0.8163054695562436
+   }
+  }
+ },
+ "model_sha256": "28eb1503aee08f934287520b2fd31a5b816fab4c98b43c04f9c70c86bad291a2"
+}

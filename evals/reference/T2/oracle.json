@@ -1,0 +1,199 @@
+{
+ "profile": "l2",
+ "hidden_sha256": "783667d82ebd68efe6fd506326ab4cb2f182b1c24cd4eeeadcee2237e8107c8c",
+ "score": "evals/reference/T2/score.py",
+ "score_args": "",
+ "vs": "evals/reference/T2/score.py",
+ "vs_args": "--model evals/reference/T2/model_with_proxies.json",
+ "files_unchanged": true,
+ "files_sha256": {
+  "model.json": "08ef95e6d5fd06a5f0fd782d4f456662943d60ed0643a3dda7d5a6783ca0b91c",
+  "prompt.md": "709eed35acaf26189370dfdbcee81c7aa0ba26acbaae039c2b1b1b10f7ca87a2",
+  "holdout_ids.txt": "6d106d9fb8221afd7bd4ca9864cae1f231be4d8a43bf2f41aef8abe986d4724b",
+  "results.json": "0a117a8ce944183e1578a8ef115523a5da181aace096144fff50e026a03f382e",
+  "oracle.txt": "8a63bf86914b6c214eed144325877614fe6320797909811e216fc4412950c051",
+  "model_with_proxies.json": "68fa94cb66ade4809c665e622b70d3ec9c8def4e6de78c4365a2b571e595001f",
+  "reference.md": "f6577dfd14efbfb506158281eefe951eb94166097b247fcee85ebf111ba4e096",
+  "journal.md": "ba4b3fb7986200f0b3fe539e39cc5400617413e882dc66dda80e2c7b2622e19d",
+  "ref_lib.py": "d42c494cef9c02cd6d048a3df43ab7e42fc1f932661fcdd9faa6d97658cf0d1b",
+  "run.py": "b0d1d631c1de398bc3fdf89a067786f3dbcd33c51191290d40ed1b2031be1d3b",
+  "score.py": "9f48d20cce2338acb324e7d292d87599b4f03d9cc4be33b6d583e5e8b5a6c6c8",
+  "oracle.json": "7501a811e7afd97e68f99ee7bde53f8b639890cc0c8f7371b100131583442d0a"
+ },
+ "protocols": {
+  "a7": {
+   "rows": 2000,
+   "users": 2000,
+   "positives": 476,
+   "positive_share": 0.238,
+   "roc_auc": 0.5576035532323166,
+   "ci95": [
+    0.5279870759444397,
+    0.5853475971359834
+   ],
+   "vs": {
+    "roc_auc": 0.5681242969628797,
+    "ci95": [
+     0.5383433917195003,
+     0.5966148471210486
+    ],
+    "diff": -0.010520743730563109,
+    "diff_ci95": [
+     -0.01843133984241845,
+     -0.0026663140779179177
+    ]
+   },
+   "lookahead": {
+    "runs": 1,
+    "max_abs_diff": 0.0,
+    "passed": true
+   }
+  },
+  "a14": {
+   "rows": 2000,
+   "users": 2000,
+   "positives": 525,
+   "positive_share": 0.2625,
+   "roc_auc": 0.7408335754640839,
+   "ci95": [
+    0.7177103251219048,
+    0.7644907313055644
+   ],
+   "vs": {
+    "roc_auc": 0.747295560936239,
+    "ci95": [
+     0.7239126978023159,
+     0.7704142338748601
+    ],
+    "diff": -0.006461985472155041,
+    "diff_ci95": [
+     -0.01061009605291292,
+     -0.001897256608732738
+    ]
+   },
+   "lookahead": {
+    "runs": 1,
+    "max_abs_diff": 0.0,
+    "passed": true
+   }
+  },
+  "b": {
+   "rows": 16032,
+   "users": 1749,
+   "positives": 1213,
+   "positive_share": 0.07566117764471057,
+   "roc_auc": 0.8714228914585546,
+   "ci95": [
+    0.8609773794099138,
+    0.8814808265850947
+   ],
+   "vs": {
+    "roc_auc": 0.9049984125568616,
+    "ci95": [
+     0.8959057563734737,
+     0.9135772718780258
+    ],
+    "diff": -0.03357552109830708,
+    "diff_ci95": [
+     -0.03948431702292059,
+     -0.027861831079472217
+    ]
+   },
+   "lookahead": {
+    "runs": 14,
+    "max_abs_diff": 1.0408340855860843e-16,
+    "passed": true
+   }
+  }
+ },
+ "calls": [
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/hidden-users.csv <workdir>/points_a7.csv <workdir>/out_a7.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/hidden-users.csv <workdir>/points_a7.csv <workdir>/vs_a7.csv --model evals/reference/T2/model_with_proxies.json",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/hidden-users.csv <workdir>/points_a14.csv <workdir>/out_a14.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/hidden-users.csv <workdir>/points_a14.csv <workdir>/vs_a14.csv --model evals/reference/T2/model_with_proxies.json",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/hidden-users.csv <workdir>/points_b.csv <workdir>/out_b.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/hidden-users.csv <workdir>/points_b.csv <workdir>/vs_b.csv --model evals/reference/T2/model_with_proxies.json",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  },
+  {
+   "cmd": "-I evals/reference/T2/score.py <workdir>/trunc_events.csv <workdir>/trunc_points.csv <workdir>/trunc_out.csv",
+   "exit": 0
+  }
+ ]
+}
