@@ -25,7 +25,7 @@ ru/evals/scorecard.md	550
 ru/evals/tasks.md	800
 ru/scenarios/_index.md	300
 ru/scenarios/code-engineering.md	600
-ru/scenarios/data-analysis.md	650
+ru/scenarios/data-analysis.md	700
 ru/scenarios/decision-plan.md	650
 ru/scenarios/design-ux.md	600
 ru/scenarios/generic.md	400
@@ -39,12 +39,12 @@ checklists/post-run.md	400
 checklists/pre-flight.md	400
 core/gate.md	500
 core/prompt-template.md	400
-core/report-format.md	300
+core/report-format.md	350
 evals/scorecard.md	600
 evals/tasks.md	900
 scenarios/_index.md	300
 scenarios/code-engineering.md	700
-scenarios/data-analysis.md	750
+scenarios/data-analysis.md	800
 scenarios/decision-plan.md	750
 scenarios/design-ux.md	650
 scenarios/generic.md	450

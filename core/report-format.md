@@ -7,6 +7,7 @@ The worker and the verifier share the same fields — so the reports can be laid
 ```
 RESULT
 delivered: [files, links, artifacts]
+check without the author: [commands, one line each — per the scenario's "For the worker" block]
 
 SCHEME
 chosen: baseline | ambitious right away | conditional
