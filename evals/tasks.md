@@ -32,7 +32,7 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** "Ambitious right away" scheme due to mode; holdout set aside after viewing the data; verifier accepts worker's AUC without measuring it.
 
-**Reference:** in preparation, see `evals/reference/README.md`.
+**Reference:** [T2](reference/T2/reference.md).
 
 ---
 
@@ -46,7 +46,7 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** The outcome is not "passed", or after "passed" the ambitious branch is not carried out or starts before GATE; the branch's cost exceeds the limit without a stop and a report; ROC AUC on the hidden users is more than 0.02 below the single skill's, or the model does not run on the oracle.
 
-**Suite:** capability. **Reference:** in preparation, see `evals/reference/README.md`.
+**Suite:** capability. **Reference:** [T2-pass](reference/T2-pass/reference.md).
 
 ---
 
@@ -60,7 +60,7 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** Ambitious bar expanded into a paragraph; test written after the fix; verifier does not run the tests.
 
-**Suite:** regression. **Reference:** in preparation, see `evals/reference/README.md`.
+**Suite:** regression. **Reference:** [T3](reference/T3/reference.md).
 
 ---
 
@@ -126,4 +126,4 @@ Each task lists: original statement, what is checked, expected behavior, what co
 
 **Failure.** Worker "refines" the threshold; worker treats "almost" as "passed"; verifier misses the mismatch.
 
-**Suite:** regression. **Reference:** in preparation, see `evals/reference/README.md`.
+**Suite:** regression. **Reference:** [L2](reference/L2/reference.md).

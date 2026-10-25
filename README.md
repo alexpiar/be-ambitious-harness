@@ -246,8 +246,9 @@ be-ambitious-harness/
 │   └── report-format.md     worker report, verifier verdict, 5-line human summary
 ├── scenarios/               _index.md + six playbooks
 ├── checklists/              pre-flight.md, post-run.md
-├── evals/                   tasks.md (6 + 2 traps), scorecard.md (31 criteria)
+├── evals/                   tasks.md (6 + 2 traps + T2-pass), scorecard.md (31 criteria), scorer.md
 │   ├── fixtures/            data generators for the eval tasks
+│   ├── reference/           a reference solution per task; the churn oracle
 │   └── runs/                recorded runs: protocol, fixtures, logs, scores
 ├── tools/                   lint-harness.py, gate-check.py and their tests
 ├── .github/workflows/       CI: lint and tool tests on every push and PR
