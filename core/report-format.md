@@ -12,6 +12,10 @@ SCHEME
 chosen: baseline | ambitious right away | conditional
 GATE: [block from core/gate.md, if any]
 
+BARS (baseline miss — defect; ambitious miss — expected result)
+baseline: met | not met (why)
+ambitious: reached | not reached | not run (why) — what we learned
+
 EVIDENCE
 claim → supported by (file / test / number / source)
 …
