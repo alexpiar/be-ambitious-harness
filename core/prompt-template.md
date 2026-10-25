@@ -54,6 +54,6 @@ Gaming the metric — what counts as it: …
 
 ## 7. Completion and report
 Done when: …
-Report per core/report-format.md: result; scheme and gate outcome; assumptions; unverified conclusions; blockers.
+Report per core/report-format.md: result and the check without the author; scheme and gate outcome; both bars; assumptions; unverified conclusions; blockers.
 </prompt>
 ```

@@ -29,7 +29,7 @@ Result — a conclusion, metric, model, data report. Typical statement: "analyze
 - Every conclusion — with an interval or stability across subsamples. A point estimate without uncertainty goes under "unverified".
 - A negative result is a result: "no signal detected at this volume", with an estimate of what volume would suffice.
 - Hand over: a reproducible script; holdout data or a way to get it; a report with conclusions and their uncertainty; a list of causal-inference assumptions, if any.
-- For the check without the author, hand over the saved model and next to it `score.py <events.csv> <points.csv> <out.csv>`: `events.csv` — raw events in the source format, `points.csv` — `user_id,asof` pairs (entity and any prediction moment), `out.csv` — `user_id,asof,score`. The script loads the model without retraining, needs no labels, and builds features only from events at or before `asof`. If the result is a conclusion, not a model — a script that recomputes the conclusion on new data.
+- For the check without the author, hand over the saved model and next to it `score.py <events.csv> <points.csv> <out.csv>`: `events.csv` — raw events in the source format, `points.csv` — `user_id,asof` pairs (entity and prediction moment in the `ts` format; the checker picks the points), `out.csv` — `user_id,asof,score`. The script loads the model without retraining, needs no labels, and builds features only from events at or before `asof`. If the result is a conclusion, not a model — a script that recomputes the conclusion on new data.
 
 ## Example of two bars
 
