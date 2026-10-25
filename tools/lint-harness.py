@@ -34,7 +34,7 @@ RU = "ru"
 # Что считается файлом харнесса в корне каждого языка (плюс всё *.md внутри ru/).
 HARNESS_TOP = ("SKILL.md",)
 HARNESS_DIRS = ("agents", "core", "scenarios", "checklists", "evals")
-NOT_HARNESS = ("evals/runs/", "evals/fixtures/")  # записанные прогоны и генераторы данных — не харнесс
+NOT_HARNESS = ("evals/runs/", "evals/fixtures/", "evals/reference/")  # прогоны, генераторы данных и эталоны — не харнесс
 
 BUDGETS_FILE = "tools/word-budgets.tsv"
 
