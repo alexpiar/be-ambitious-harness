@@ -28,7 +28,7 @@ Result — working code, a fix, feature, refactoring, infrastructure. Typical st
 - Benchmark: same test bench, ≥5 runs, median and p95, cold and warm separately. Numbers without conditions — under "unverified".
 - Full test suite and linter — before hand-in; output — into the log.
 - Changes outside section 2 — a list with justification for each, or revert.
-- Hand over: diff or branch; commands for reproduction, tests, benchmark — so the verifier repeats them without you; the log with command outputs.
+- Hand over: diff or branch; for the check without the author — commands for reproduction, tests, benchmark that run on a clean clone without edits; the log.
 
 ## Example of two bars
 
