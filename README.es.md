@@ -18,7 +18,7 @@ Be-Ambitious Harness es un **framework de ingeniería de prompts y un flujo de t
 - **Una comprobación de entrada**: una prueba barata y observable que decide si vale la pena emprender el camino ambicioso, con un criterio de superación fijado *antes* de ejecutar la prueba y tres resultados posibles: superada, no superada, datos insuficientes.
 - **Aislamiento de roles**: un planificador escribe el prompt, un ejecutor lo lleva a cabo y un verificador evalúa el resultado viendo solo el objetivo, los requisitos, los criterios de la verificación de entrada y de aceptación y el registro de evidencias. Nadie evalúa su propio trabajo.
 - **Seis guías de escenario**: diseño/UX, análisis de datos, código, redacción/investigación, decisiones/planes y genérico, cada una con controles y trampas propios de su dominio.
-- **Un conjunto de evaluaciones**: 8 tareas de prueba y una tabla de puntuación de 30 criterios, para saber cuándo falla el propio harness (arnés o marco de trabajo). Hasta ahora se han ejecutado dos de las tareas; consulta [Estado](#estado-qué-se-ha-probado).
+- **Un conjunto de evaluaciones**: 8 tareas de prueba y una tabla de puntuación de 31 criterios, para saber cuándo falla el propio harness (arnés o marco de trabajo). Hasta ahora se han ejecutado dos de las tareas; consulta [Estado](#estado-qué-se-ha-probado).
 
 Se distribuye como **skill de Claude Code** (`/be-ambitious-harness`) en **inglés y ruso**, y funciona con cualquier agente capaz de leer una carpeta de archivos markdown.
 
@@ -245,7 +245,7 @@ be-ambitious-harness/
 │   └── report-format.md     informe del ejecutor, veredicto del verificador, resumen de 5 líneas para la persona
 ├── scenarios/               _index.md + seis guías
 ├── checklists/              pre-flight.md, post-run.md
-├── evals/                   tasks.md (6 + 2 trampas), scorecard.md (30 criterios)
+├── evals/                   tasks.md (6 + 2 trampas), scorecard.md (31 criterios)
 │   └── runs/                ejecuciones registradas: protocolo, datos de prueba, registros, puntuaciones
 ├── ru/                      los originales en ruso — la misma estructura
 ├── README.md · README.ru.md · README.zh-CN.md · README.es.md

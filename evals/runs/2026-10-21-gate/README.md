@@ -55,6 +55,7 @@ Wall clock 2 h 10 min (00:47–02:57, server time), including fixtures. Sub-agen
 - `protocol.md`, `deviations.md` — pre-registration and deviations (in Russian).
 - `T3-A/`, `T3-B/`, `L2-A/`, `L2-B/` — prompts, journals, reports, verdicts, diffs, scripts, action logs.
 - `scoring/` — blind scores, scorer action logs, coin-flip mappings.
+- `*/tmp/` — the arms' working files (intermediate outputs, scratch scripts, second-run results): moved out of the tree on 25 Oct 2026 and kept unchanged as a release asset, [`gate-2026-10-21-tmp.tar.gz`](https://github.com/alexpiar/be-ambitious-harness/releases/download/v0.1.0/gate-2026-10-21-tmp.tar.gz).
 - `fixtures/` — the T3 repo, the event generator, the hidden T3 oracle. The hidden L2 users: `python3 -I gen_events.py hidden-users.csv 9001 2000`.
 
 ---
