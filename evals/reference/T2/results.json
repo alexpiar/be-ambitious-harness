@@ -1,0 +1,626 @@
+{
+ "data_sha256": "2284d9bc94351ba7a362d45a52b3b83e534bb0a342446a5321cc78568b1d93f1",
+ "holdout_sha256": "6d106d9fb8221afd7bd4ca9864cae1f231be4d8a43bf2f41aef8abe986d4724b",
+ "quality_dev": {
+  "rows": 338975,
+  "users": 4800,
+  "signups_per_user": [
+   1
+  ],
+  "cancels_per_user_max": 1,
+  "full_duplicates": 0,
+  "sorted_by_ts": true,
+  "static_constant": true,
+  "events_before_signup": {
+   "plan_downgrade": 6,
+   "support_ticket": 2
+  },
+  "events_after_cancel_except_exit_survey": 0,
+  "sessions_per_active_user_by_month": [
+   6.85,
+   6.42,
+   7.17,
+   7.21,
+   7.54,
+   7.49,
+   7.89,
+   7.99,
+   8.13,
+   8.64,
+   8.74,
+   9.29
+  ],
+  "charge_amount_matches_plan_column": 1.0,
+  "precursors": {
+   "payment_failed": {
+    "base": "все",
+    "churned_with": 826,
+    "churned": 2131,
+    "retained_with": 0,
+    "retained": 2669,
+    "p_cancel_given_event": 1.0
+   },
+   "plan_downgrade": {
+    "base": "pro",
+    "churned_with": 177,
+    "churned": 609,
+    "retained_with": 0,
+    "retained": 919,
+    "p_cancel_given_event": 1.0
+   },
+   "support_ticket": {
+    "base": "все",
+    "churned_with": 751,
+    "churned": 2131,
+    "retained_with": 211,
+    "retained": 2669,
+    "p_cancel_given_event": 0.7806652806652806
+   }
+  },
+  "retained_with_missing_payments": 0,
+  "churned_in_data": 2131
+ },
+ "proxy_rule": {
+  "payment_failed": {
+   "proxy": true,
+   "churned_with": 826,
+   "retained_with": 0
+  },
+  "plan_downgrade": {
+   "proxy": true,
+   "churned_with": 177,
+   "retained_with": 0
+  },
+  "support_ticket": {
+   "proxy": false,
+   "churned_with": 751,
+   "retained_with": 211
+  },
+  "n_payment_derived": true
+ },
+ "excluded": {
+  "snapshots": [
+   "n_payment_failed_last30",
+   "unrecovered_failure",
+   "had_downgrade",
+   "n_payment"
+  ],
+  "first_week": [
+   "n_payment_failed",
+   "had_downgrade",
+   "n_payment"
+  ]
+ },
+ "gate": {
+  "population": 4800,
+  "positives": 1176,
+  "auc_A": 0.5306463852097131,
+  "auc_B": 0.5428124202219519,
+  "auc_B_ci": [
+   0.5252640121737324,
+   0.5615040173557924
+  ],
+  "diff": 0.012166035012238785,
+  "diff_ci": [
+   0.0005672294553961761,
+   0.0240955298582748
+  ],
+  "applicable": true,
+  "passed": false,
+  "outcome": "не пройдена"
+ },
+ "stage2_snapshots": {
+  "numeric": [
+   "tenure_days",
+   "n_sessions",
+   "sessions_per_week",
+   "sessions_last7",
+   "sessions_last28",
+   "sessions_prev28",
+   "active_days_last28",
+   "feature_used_last28",
+   "days_since_last_session",
+   "n_support_ticket_last30"
+  ],
+  "cv": {
+   "LR C=0.01": 0.8535400788161799,
+   "LR C=0.1": 0.8558840311279898,
+   "LR C=1.0": 0.8561606927241141
+  },
+  "chosen": "LR C=1.0",
+  "rows": 95407,
+  "users": 4786,
+  "positives": 8482,
+  "refute": {
+   "shuffled_oof_auc": 0.4997556659089675,
+   "ci": [
+    0.4936489375812458,
+    0.5057349152634898
+   ]
+  },
+  "single_feature_auc_dev": {
+   "sessions_last28": 0.7880061734887739,
+   "active_days_last28": 0.7765947669588349,
+   "sessions_last7": 0.7733946952374811,
+   "days_since_last_session": 0.7618239290945986,
+   "n_sessions": 0.7570417382879931,
+   "feature_used_last28": 0.7209447945630114,
+   "sessions_per_week": 0.7081832064205802,
+   "tenure_days": 0.661128337753867,
+   "sessions_prev28": 0.6604535412655821,
+   "n_support_ticket_last30": 0.5605421492820032
+  },
+  "holdout": {
+   "модель на срезах": {
+    "auc": 0.8572466575276638,
+    "auc_ci": [
+     0.846262637582364,
+     0.868234750176667
+    ],
+    "ap": 0.42384094687700463,
+    "ap_ci": [
+     0.3915935712245301,
+     0.45691899239769307
+    ],
+    "top20": 0.2831806583845735,
+    "top20_ci": [
+     0.25893192171303175,
+     0.30699988926812266
+    ],
+    "lift": 3.2848131974769528,
+    "lift_ci": [
+     3.1319214139585467,
+     3.4119567593166003
+    ]
+   },
+   "ЛР на статике": {
+    "auc": 0.5360254679407966,
+    "auc_ci": [
+     0.5075081261941607,
+     0.5650199544860739
+    ],
+    "ap": 0.09346139403031632,
+    "ap_ci": [
+     0.08294170573245221,
+     0.107056204432143
+    ],
+    "top20": 0.10418839925832192,
+    "top20_ci": [
+     0.08337245354429235,
+     0.12294557796171388
+    ],
+    "lift": 1.2085550999848143,
+    "lift_ci": [
+     0.9837558846654543,
+     1.3772596568029096
+    ]
+   },
+   "правило: дней с последней сессии": {
+    "auc": 0.7687481929325489,
+    "auc_ci": [
+     0.7550488295425273,
+     0.782479650199689
+    ],
+    "ap": 0.27876076214928097,
+    "ap_ci": [
+     0.2506849494946455,
+     0.31154517032110196
+    ],
+    "top20": 0.24197933659597604,
+    "top20_ci": [
+     0.22104664334177412,
+     0.2663936827992144
+    ],
+    "lift": 2.806889859291606,
+    "lift_ci": [
+     2.710971354474877,
+     2.925425425425425
+    ]
+   },
+   "базовый уровень": {
+    "auc": 0.5,
+    "auc_ci": [
+     0.5,
+     0.5
+    ],
+    "ap": 0.08620906010791819,
+    "ap_ci": [
+     0.07820589694464009,
+     0.09448274674070906
+    ],
+    "top20": 0.08620906010791818,
+    "top20_ci": [
+     0.07820589694464009,
+     0.09448274674070907
+    ],
+    "lift": 1.0,
+    "lift_ci": [
+     0.9999999999999998,
+     1.0000000000000002
+    ]
+   },
+   "все признаки (с прокси метки)": {
+    "auc": 0.8926589607469303,
+    "auc_ci": [
+     0.883284745177882,
+     0.9023700146615837
+    ],
+    "ap": 0.6027189846344172,
+    "ap_ci": [
+     0.5736228886100015,
+     0.6294677789291746
+    ],
+    "top20": 0.31538879825992383,
+    "top20_ci": [
+     0.28996315475965445,
+     0.3445243991114693
+    ],
+    "lift": 3.6584182435710817,
+    "lift_ci": [
+     3.5312887295493622,
+     3.786732266297308
+    ]
+   },
+   "модель на срезах − ЛР на статике": {
+    "diff_auc": 0.3212211895868672,
+    "diff_auc_ci": [
+     0.29067577282383195,
+     0.3519343126629206
+    ]
+   },
+   "модель на срезах − правило: дней с последней сессии": {
+    "diff_auc": 0.0884984645951149,
+    "diff_auc_ci": [
+     0.07749858042599062,
+     0.09955471963204016
+    ]
+   },
+   "модель на срезах − все признаки (с прокси метки)": {
+    "diff_auc": -0.03541230321926647,
+    "diff_auc_ci": [
+     -0.041736616390438255,
+     -0.029170150522480454
+    ]
+   },
+   "_base_rate": 0.08620906010791818,
+   "rows": 23907,
+   "users": 1200,
+   "positives": 2061
+  },
+  "truncation_holdout": {
+   "points": 23907,
+   "runs": 44,
+   "max_abs_diff": 0.0,
+   "static_equal": true
+  },
+  "holdout_ids_in_training": 0,
+  "importance": {
+   "holdout": {
+    "tenure_days": {
+     "drop": 0.062237239788394794,
+     "ci": [
+      0.053660894317738725,
+      0.07019600911219935
+     ],
+     "zero_in_ci": false
+    },
+    "n_sessions": {
+     "drop": 0.2881998079005954,
+     "ci": [
+      0.26966732577956926,
+      0.30689033528080684
+     ],
+     "zero_in_ci": false
+    },
+    "sessions_per_week": {
+     "drop": 0.0375420564479787,
+     "ci": [
+      0.031241051916862637,
+      0.04407140319166206
+     ],
+     "zero_in_ci": false
+    },
+    "sessions_last7": {
+     "drop": 0.054429417994240725,
+     "ci": [
+      0.049893845700942185,
+      0.05879739403025868
+     ],
+     "zero_in_ci": false
+    },
+    "sessions_last28": {
+     "drop": 0.010107788616739777,
+     "ci": [
+      0.008371697800935407,
+      0.011972241553793865
+     ],
+     "zero_in_ci": false
+    },
+    "sessions_prev28": {
+     "drop": 0.0005498548948990045,
+     "ci": [
+      -0.00014459903994106793,
+      0.0012622622949779643
+     ],
+     "zero_in_ci": true
+    },
+    "active_days_last28": {
+     "drop": 0.00036488048335159284,
+     "ci": [
+      0.000214684270744539,
+      0.0005031653524677909
+     ],
+     "zero_in_ci": false
+    },
+    "feature_used_last28": {
+     "drop": 0.0029323565874179724,
+     "ci": [
+      0.0016994053816436344,
+      0.004183431130477411
+     ],
+     "zero_in_ci": false
+    },
+    "days_since_last_session": {
+     "drop": 0.015166520280044171,
+     "ci": [
+      0.01240679542380787,
+      0.01790360424279758
+     ],
+     "zero_in_ci": false
+    },
+    "n_support_ticket_last30": {
+     "drop": 0.01990819642041941,
+     "ci": [
+      0.01613772318775076,
+      0.023688344943173945
+     ],
+     "zero_in_ci": false
+    },
+    "plan": {
+     "drop": -1.4376583328701287e-05,
+     "ci": [
+      -0.00025887235954114853,
+      0.00024124401450746066
+     ],
+     "zero_in_ci": true
+    },
+    "device": {
+     "drop": 4.766948987833253e-05,
+     "ci": [
+      -0.00038830538539398883,
+      0.0005071507003179875
+     ],
+     "zero_in_ci": true
+    },
+    "country": {
+     "drop": -0.0003821266087260522,
+     "ci": [
+      -0.001173347974285549,
+      0.00035694573101530396
+     ],
+     "zero_in_ci": true
+    },
+    "channel": {
+     "drop": 0.0009814144736769448,
+     "ci": [
+      -0.000152620250594776,
+      0.0020334164450509997
+     ],
+     "zero_in_ci": true
+    },
+    "группа: n_sessions + tenure_days": {
+     "drop": 0.166517701454178,
+     "ci": [
+      0.1535328130947356,
+      0.17913633665613515
+     ],
+     "zero_in_ci": false
+    },
+    "группа: active_days_last28 + sessions_last28": {
+     "drop": 0.011824087922057469,
+     "ci": [
+      0.009793440375532463,
+      0.01386917983304053
+     ],
+     "zero_in_ci": false
+    }
+   },
+   "correlated_groups": [
+    [
+     "n_sessions",
+     "tenure_days"
+    ],
+    [
+     "active_days_last28",
+     "sessions_last28"
+    ]
+   ],
+   "coef": {
+    "tenure_days": 1.1139516154040279,
+    "n_sessions": -1.8553662871416972,
+    "sessions_per_week": 0.8623925107702227,
+    "sessions_last7": -0.622914349403175,
+    "sessions_last28": -0.23217750406437107,
+    "sessions_prev28": 0.06782599168799659,
+    "active_days_last28": -0.021474554742295593,
+    "feature_used_last28": -0.13793712282229947,
+    "days_since_last_session": 0.34466488631961906,
+    "n_support_ticket_last30": 0.3773795419142357,
+    "plan=basic": -0.00904382985600195,
+    "plan=pro": 0.00904382985600237,
+    "device=android": 0.01761342471055555,
+    "device=ios": 0.0041184530485890245,
+    "device=web": -0.021530679130032575,
+    "country=BR": 0.036240529197618346,
+    "country=DE": -0.012429085762176696,
+    "country=FR": -0.017537383131928513,
+    "country=GB": -0.028465796557055025,
+    "country=IN": 0.02448710312568617,
+    "country=US": -0.006553259353829351,
+    "channel=ads": 0.04702115725071819,
+    "channel=organic": -0.0004934710834911647,
+    "channel=referral": -0.06295550313183725
+   },
+   "stability": {
+    "fold0": {
+     "n": 19408,
+     "ranks": {
+      "n_sessions": 1,
+      "tenure_days": 2,
+      "sessions_last7": 3,
+      "sessions_per_week": 4,
+      "n_support_ticket_last30": 5,
+      "days_since_last_session": 6,
+      "sessions_last28": 7,
+      "feature_used_last28": 8,
+      "channel": 9,
+      "active_days_last28": 10,
+      "country": 11,
+      "device": 12,
+      "sessions_prev28": 13,
+      "plan": 14
+     },
+     "top5_overlap": 5,
+     "spearman": 0.956043956043956
+    },
+    "fold1": {
+     "n": 19269,
+     "ranks": {
+      "n_sessions": 1,
+      "tenure_days": 2,
+      "sessions_last7": 3,
+      "sessions_per_week": 4,
+      "n_support_ticket_last30": 5,
+      "days_since_last_session": 6,
+      "sessions_last28": 7,
+      "feature_used_last28": 8,
+      "channel": 9,
+      "sessions_prev28": 10,
+      "active_days_last28": 11,
+      "plan": 12,
+      "device": 13,
+      "country": 14
+     },
+     "top5_overlap": 5,
+     "spearman": 0.9956043956043955
+    },
+    "fold2": {
+     "n": 18670,
+     "ranks": {
+      "n_sessions": 1,
+      "tenure_days": 2,
+      "sessions_last7": 3,
+      "sessions_per_week": 4,
+      "n_support_ticket_last30": 5,
+      "days_since_last_session": 6,
+      "sessions_last28": 7,
+      "feature_used_last28": 8,
+      "channel": 9,
+      "active_days_last28": 10,
+      "device": 11,
+      "sessions_prev28": 12,
+      "country": 13,
+      "plan": 14
+     },
+     "top5_overlap": 5,
+     "spearman": 0.9824175824175824
+    },
+    "fold3": {
+     "n": 18723,
+     "ranks": {
+      "n_sessions": 1,
+      "tenure_days": 2,
+      "sessions_last7": 3,
+      "sessions_per_week": 4,
+      "n_support_ticket_last30": 5,
+      "days_since_last_session": 6,
+      "sessions_last28": 7,
+      "feature_used_last28": 8,
+      "sessions_prev28": 9,
+      "country": 10,
+      "active_days_last28": 11,
+      "channel": 12,
+      "device": 13,
+      "plan": 14
+     },
+     "top5_overlap": 5,
+     "spearman": 0.9384615384615385
+    },
+    "fold4": {
+     "n": 19337,
+     "ranks": {
+      "n_sessions": 1,
+      "tenure_days": 2,
+      "sessions_last7": 3,
+      "sessions_per_week": 4,
+      "n_support_ticket_last30": 5,
+      "days_since_last_session": 6,
+      "sessions_last28": 7,
+      "feature_used_last28": 8,
+      "channel": 9,
+      "country": 10,
+      "sessions_prev28": 11,
+      "active_days_last28": 12,
+      "plan": 13,
+      "device": 14
+     },
+     "top5_overlap": 5,
+     "spearman": 0.9516483516483516
+    },
+    "plan=basic": {
+     "n": 63850,
+     "ranks": {
+      "n_sessions": 1,
+      "tenure_days": 2,
+      "sessions_last7": 3,
+      "sessions_per_week": 4,
+      "n_support_ticket_last30": 5,
+      "days_since_last_session": 6,
+      "sessions_last28": 7,
+      "feature_used_last28": 8,
+      "channel": 9,
+      "active_days_last28": 10,
+      "sessions_prev28": 11,
+      "country": 12,
+      "plan": 13,
+      "device": 14
+     },
+     "top5_overlap": 5,
+     "spearman": 0.9780219780219781
+    },
+    "plan=pro": {
+     "n": 31557,
+     "ranks": {
+      "n_sessions": 1,
+      "tenure_days": 2,
+      "sessions_last7": 3,
+      "sessions_per_week": 4,
+      "n_support_ticket_last30": 5,
+      "days_since_last_session": 6,
+      "sessions_last28": 7,
+      "feature_used_last28": 8,
+      "sessions_prev28": 9,
+      "channel": 10,
+      "country": 11,
+      "active_days_last28": 12,
+      "device": 13,
+      "plan": 14
+     },
+     "top5_overlap": 5,
+     "spearman": 0.9692307692307693
+    }
+   }
+  }
+ },
+ "ablation_dev_oof": {
+  "C": 1.0,
+  "auc": {
+   "основная (без прокси)": 0.8561606927241141,
+   "+ payment_failed и n_payment": 0.8834298282573319,
+   "+ plan_downgrade": 0.8611081518819023,
+   "все признаки": 0.8867388654395235
+  }
+ },
+ "model_sha256": "08ef95e6d5fd06a5f0fd782d4f456662943d60ed0643a3dda7d5a6783ca0b91c",
+ "model_with_proxies_sha256": "68fa94cb66ade4809c665e622b70d3ec9c8def4e6de78c4365a2b571e595001f"
+}
