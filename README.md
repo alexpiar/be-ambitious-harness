@@ -16,7 +16,7 @@ Be-Ambitious Harness is a **prompt engineering framework and multi-agent workflo
 
 - **Two bars** — the baseline result and a more ambitious one, with the extra work and the main uncertainty named.
 - **A gate check** — a cheap, observable test that decides whether the ambitious path is worth starting, with a pass criterion fixed *before* the test runs and three outcomes: passed, failed, insufficient data.
-- **Role isolation** — a planner writes the prompt, a worker executes it, a verifier grades the result seeing only the requirements, the acceptance criteria and the evidence log. Nobody grades their own work.
+- **Role isolation** — a planner writes the prompt, a worker executes it, a verifier grades the result seeing only the goal, the requirements, the gate and acceptance criteria, and the evidence log. Nobody grades their own work.
 - **Six scenario playbooks** — design/UX, data analysis, code, writing/research, decisions/plans, generic — each with domain-specific checks and traps.
 - **An eval suite** — 8 test tasks and a 30-criteria scorecard, so you can tell when the harness itself breaks. Two of the tasks have been run so far — see [Status](#status-what-has-been-tested).
 
@@ -38,7 +38,7 @@ The prompt is excellent and it has a limit: it is one prompt. As soon as you add
 |---|---|---|
 | **Constraint saturation** | Reliable instruction following breaks down beyond 5–6 simultaneous constraints in a single generation; across 15 models at k=8, individual constraints still pass ~41% of the time, but all eight hold together only 5.7% of the time ([Vasileva, arXiv:2608.12426](https://arxiv.org/abs/2608.12426); poster at an ICML 2026 workshop) | Each role gets only the files for its step (250–630 words each); structure comes from templates, not from rules held in context |
 | **Negative instructions backfire** | Naming a forbidden word primes the model to produce it; in failures the suppression signal is 4.4× weaker ([Rana, 2026 preprint](https://arxiv.org/abs/2601.08070); one model, Qwen2.5-7B-Instruct) | Instructions are positive: "include only the template sections" instead of "do not include the analysis" |
-| **Self-preference bias** | LLM judges rate low-perplexity text higher than human evaluators do, regardless of who wrote it ([Wataoka et al., NeurIPS 2024 Safe Generative AI Workshop](https://arxiv.org/abs/2410.21819)) | The verifier sees only requirements, criteria, result and evidence — and preferably runs on a different model, which is what actually changes the judge's perplexity |
+| **Self-preference bias** | LLM judges rate low-perplexity text higher than human evaluators do, regardless of who wrote it ([Wataoka et al., NeurIPS 2024 Safe Generative AI Workshop](https://arxiv.org/abs/2410.21819)) | The verifier sees only the goal, requirements, criteria, result and evidence — and preferably runs on a different model, which is what actually changes the judge's perplexity |
 
 Each of these rests on one recent study, and applying them to agent instructions is the harness's own extrapolation. The harness is an attempt to keep "be more ambitious" working within these limits — and its eval suite is there to show where it does not.
 

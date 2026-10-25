@@ -5,7 +5,7 @@ description: Harness for ambitious AI task statements. Use when the user writes 
 
 # Be-Ambitious Harness
 
-Three roles and one human. **Planner** turns the task into a prompt with two bars and a gate check. **Worker** executes the prompt, starting with the check. **Verifier** grades the result seeing only criteria and facts. **Human** chooses the scheme and cost limit — this is not delegated.
+Three roles and one human. **Planner** turns the task into a prompt with two bars and a gate check. **Worker** executes the prompt, starting with the check. **Verifier** grades the result seeing only the goal, requirements, criteria and facts. **Human** chooses the scheme and cost limit — this is not delegated.
 
 Each role reads only its own files. This is deliberate: instruction following breaks down past 5–6 simultaneous constraints, so structure comes from files and templates, not from rules held in mind.
 
