@@ -7,6 +7,7 @@ Run by the orchestrator once the worker report and verifier verdict exist. Resul
 - [ ] Worker did not get the planner's analysis; verifier did not get the worker's reasoning or sections 1, 3, 4, 5, 7.
 - [ ] Verifier is a separate session; if the same model, this is noted in the report to the human.
 - [ ] If there was a gate check: GATE block is in the log, precedes the first ambitious-branch action, its criterion matches section 4 verbatim.
+- [ ] `tools/gate-check.py <prompt> <log>` exited 0; otherwise its output goes in the report to the human.
 - [ ] If the worker requested materials — the request came before work, not framed as an "insufficient data" outcome.
 
 ## Report reconciliation
