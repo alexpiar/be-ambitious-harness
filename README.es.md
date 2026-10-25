@@ -152,7 +152,7 @@ Las seis guías se asignan según *dónde vive el resultado*, no según el tema.
 - En L2, la comprobación de entrada no alcanzó su umbral fijado (ROC AUC 0.548 frente a 0.65). El ejecutor registró "no superada", no tocó el criterio y entregó el modelo base (0.740 frente a 0.537 de los atributos estáticos); el verificador recalculó todas las cifras a partir de su propia copia de los datos: diferencia cero.
 - **Salvedad importante:** la skill individual dio el resultado técnicamente más profundo las dos veces: un parser de locales más completo en T3 y un análisis más rico en L2. Donde ganó el harness fue en disciplina (la prueba antes de la corrección, el alcance tal como se pidió, el criterio leído en lugar de revisado), no en profundidad.
 - Dos tareas, una ejecución cada una: una prueba de humo, no un benchmark. La evaluación a ciegas fue parcial. Las ejecuciones usaron los archivos en ruso; la traducción al inglés aún no se ha ejecutado para probar su comportamiento.
-- La ejecución sacó a la luz un defecto del harness: el verificador no recibe el criterio de la comprobación de entrada (sección 4 del prompt), así que no puede contrastarlo con el prompt. La corrección está pendiente.
+- La ejecución sacó a la luz un defecto del harness: el verificador no recibe el criterio de la comprobación de entrada (sección 4 del prompt), así que no podía contrastarlo con el prompt. Corregido en v0.1.1: el verificador recibe las secciones 1, 2, 4 y 6 y ejecuta `tools/gate-check.py` ([registro](evals/runs/2026-10-25-v011-verifier/)).
 
 **Aún sin ejecutar:** T1, T2 como tarea independiente, T4–T6, L1.
 

@@ -31,6 +31,8 @@ Scoring: a separate Claude Sonnet 5.5 session per task got the two result bundle
 
 **Criterion check:** (1) arm A fired no failure condition in either task — yes; (2) arm B fired at least one in at least one task — yes (T3); (3) the scorer did not rate A's result worse than B's — yes, in both tasks. → **passed.**
 
+**Re-scored with the order swapped (25 Oct 2026).** The same scorer prompt, rubric and bundles, with X and Y swapped (T3: A → X; L2: A → Y), one new Sonnet 5.5 session per task — [`../2026-10-25-rescore-swap/`](../2026-10-25-rescore-swap/). T3: every failure condition, the scorecard picture and the verdict ("harness better") matched. L2: every failure condition of L2 and T2 matched, V5 "no" matched; the verdict on substance did not — "harness better on process and honesty" on 21 Oct, "equal: the single skill more useful, the harness stricter on procedure" on 25 Oct. Under the double-order rule now in `evals/scorer.md` that is Unknown. Criterion (3) above still holds: neither order rated A worse.
+
 ## What this does and does not show
 
 - **It shows** that on these two tasks the harness kept the process honest: the test came before the fix, scope stayed where the mode put it, the gate criterion was read rather than revised, and every claim was re-measured by a second model.
@@ -43,7 +45,7 @@ Scoring: a separate Claude Sonnet 5.5 session per task got the two result bundle
 
 ## Defects in the harness this run exposed
 
-- **The verifier cannot check the gate criterion against the prompt** (scorecard V5): it receives sections 2 and 6, but the criterion lives in section 4. The L2 verifier reported exactly that; the orchestrator did the check instead (it matched). Fix pending in both languages.
+- **The verifier cannot check the gate criterion against the prompt** (scorecard V5): it receives sections 2 and 6, but the criterion lives in section 4. The L2 verifier reported exactly that; the orchestrator did the check instead (it matched). Fixed on 25 Oct 2026 in v0.1.1 — see [`../2026-10-25-v011-verifier/`](../2026-10-25-v011-verifier/).
 - The planner may leave a *required* `[...]` field (T3: what to show when a locale has no region). That is correct behavior, but it blocks the worker until a human answers — the protocol had to record deviation D1 to keep the run going.
 
 ## Cost
