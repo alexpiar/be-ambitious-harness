@@ -154,7 +154,8 @@ Six playbooks route by *where the result lives*, not by topic. Each gives hints 
 - In L2 the gate missed its fixed threshold (ROC AUC 0.548 vs 0.65). The worker logged "failed", left the criterion alone and delivered the baseline model (0.740 vs 0.537 for static attributes); the verifier re-ran every number from its own copy of the data — zero difference.
 - **Caveat that matters:** the single skill produced the technically deeper result both times — a fuller locale parser in T3, a richer analysis in L2. What the harness won on is discipline (test before fix, scope as asked, criterion read rather than revised), not depth.
 - Two tasks, one run each: a smoke test, not a benchmark. Blinding was partial. The runs used the Russian files; the English translation has not been run behaviorally yet.
-- The run exposed a harness defect: the verifier does not receive the gate criterion (prompt section 4), so it cannot check it against the prompt. A fix is pending.
+- The run exposed a harness defect: the verifier did not receive the gate criterion (prompt section 4), so it could not check it against the prompt. **Fixed in v0.1.1:** the verifier now gets sections 1, 2, 4 and 6 and runs `tools/gate-check.py`; re-checked on the 21 Oct L2 artifacts — [record](evals/runs/2026-10-25-v011-verifier/).
+- **Re-scored with the X/Y order swapped (25 Oct):** T3 matched in full. In L2 every failure condition matched, but the verdict on substance moved from "harness better on process" to "equal" — a position effect between close candidates, so it counts as Unknown. The gate criterion (the scorer does not rate the harness worse) holds in both orders — [record](evals/runs/2026-10-25-rescore-swap/).
 
 **Not run yet:** T1, T2 as a task of its own, T4–T6, L1.
 

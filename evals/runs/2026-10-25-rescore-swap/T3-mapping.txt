@@ -1,0 +1,1 @@
+T3: A -> X, B -> Y (forced flip = 0, swap of 21.10)
