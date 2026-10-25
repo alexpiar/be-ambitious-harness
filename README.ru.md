@@ -246,8 +246,9 @@ be-ambitious-harness/
 │   └── report-format.md     отчёт воркера, вердикт верификатора, пять строк человеку
 ├── scenarios/               _index.md и шесть плейбуков
 ├── checklists/              pre-flight.md, post-run.md
-├── evals/                   tasks.md (6 задач + 2 ловушки), scorecard.md (31 критерий)
+├── evals/                   tasks.md (6 задач + 2 ловушки + T2-pass), scorecard.md (31 критерий), scorer.md
 │   ├── fixtures/            генераторы данных для задач тестов
+│   ├── reference/           эталонное решение каждой задачи; оракул оттока
 │   └── runs/                записанные прогоны: протокол, фикстуры, журналы, оценки
 ├── tools/                   lint-harness.py, gate-check.py и их тесты
 ├── .github/workflows/       CI: линтер и тесты инструментов на каждый push и PR

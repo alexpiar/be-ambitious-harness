@@ -42,7 +42,7 @@ BUDGETS_FILE = "tools/word-budgets.tsv"
 PATH_PREFIXES = ("agents", "core", "scenarios", "checklists", "evals", "tools")
 # Эти папки есть только в корне репозитория и общие для обоих языков:
 # из ru/ на них ссылаются от корня, а не от ru/.
-SHARED_PATHS = ("evals/runs", "tools")
+SHARED_PATHS = ("evals/runs", "evals/fixtures", "evals/reference", "tools")
 # Признаки шаблона вместо реального пути: <…>, *, …, [...].
 TEMPLATE_MARKS = ("<", ">", "*", "…", "...", "[", "]")
 
