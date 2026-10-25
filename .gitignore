@@ -14,3 +14,5 @@ __pycache__/
 # Generated eval data (reproducible with fixtures/gen_events.py)
 evals/runs/**/events*.csv
 evals/runs/**/hidden-users.csv
+evals/fixtures/*.csv
+evals/fixtures/**/*.csv
