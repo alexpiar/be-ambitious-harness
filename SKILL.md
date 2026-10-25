@@ -5,7 +5,7 @@ description: Harness for ambitious AI task statements. Use when the user writes 
 
 # Be-Ambitious Harness
 
-Three roles and one human. **Planner** turns the task into a prompt with two bars and a gate check. **Worker** executes the prompt, starting with the check. **Verifier** grades the result seeing only criteria and facts. **Human** chooses the scheme and cost limit — this is not delegated.
+Three roles and one human. **Planner** turns the task into a prompt with two bars and a gate check. **Worker** executes the prompt, starting with the check. **Verifier** grades the result seeing only the goal, requirements, criteria and facts. **Human** chooses the scheme and cost limit — this is not delegated.
 
 Each role reads only its own files. This is deliberate: instruction following breaks down past 5–6 simultaneous constraints, so structure comes from files and templates, not from rules held in mind.
 
@@ -21,7 +21,7 @@ Each role reads only its own files. This is deliberate: instruction following br
 
 **4. Worker.** New session or subagent. Pass: prompt, materials, the scenario's "For the worker" block, `agents/worker.md`, `core/gate.md`, `core/report-format.md`. Nothing from the analysis.
 
-**5. Verifier.** Separate session, preferably another model. Pass: prompt sections 2 and 6, result, materials, the worker's evidence log, `agents/verifier.md`, `core/report-format.md`. Do not pass the worker's reasoning or the planner's analysis.
+**5. Verifier.** Separate session, preferably another model. Pass: prompt sections 1, 2, 4, 6, result, materials, the worker's evidence log, `agents/verifier.md`, `core/report-format.md`, `tools/gate-check.py`. Sections 3, 5, 7, the worker's reasoning and the planner's analysis stay with you.
 
 **6. Acceptance.** Run `checklists/post-run.md`. To the human: result, verifier's verdict, list of unverified items. The decision "accept / rework / stop" is theirs.
 

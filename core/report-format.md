@@ -33,7 +33,7 @@ what to check differently from how I checked: …
 ## Verifier verdict
 
 ```
-VERDICT: accept | accept with notes | reject
+VERDICT: accept | accept with notes | reject (stage 1 | 2)
 
 REQUIREMENTS (section 2, verbatim)
 requirement → met / violated / cannot verify → evidence
@@ -47,9 +47,14 @@ test: … → result: …
 GAMING
 checked: [methods from section 6 + one of my own] → found / not found
 
-GATE (if any)
+GATE
+gate-check --strict: result, FAIL lines
+criterion matches section 4: yes / no
 outcome logged before ambitious work: yes / no
-criterion matches the written one: yes / no
+outcome matches the criterion: yes / no
+
+GOAL CONFORMANCE (section 1)
+what should become possible → achieved / not achieved / cannot verify → evidence
 
 UNVERIFIED
 what and why; what is needed to verify it

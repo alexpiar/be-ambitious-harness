@@ -16,7 +16,7 @@ Be-Ambitious Harness es un **framework de ingeniería de prompts y un flujo de t
 
 - **Dos listones**: el resultado base y uno más ambicioso, con el trabajo adicional y la incertidumbre principal nombrados.
 - **Una comprobación de entrada**: una prueba barata y observable que decide si vale la pena emprender el camino ambicioso, con un criterio de superación fijado *antes* de ejecutar la prueba y tres resultados posibles: superada, no superada, datos insuficientes.
-- **Aislamiento de roles**: un planificador escribe el prompt, un ejecutor lo lleva a cabo y un verificador evalúa el resultado viendo solo los requisitos, los criterios de aceptación y el registro de evidencias. Nadie evalúa su propio trabajo.
+- **Aislamiento de roles**: un planificador escribe el prompt, un ejecutor lo lleva a cabo y un verificador evalúa el resultado viendo solo el objetivo, los requisitos, los criterios de la verificación de entrada y de aceptación y el registro de evidencias. Nadie evalúa su propio trabajo.
 - **Seis guías de escenario**: diseño/UX, análisis de datos, código, redacción/investigación, decisiones/planes y genérico, cada una con controles y trampas propios de su dominio.
 - **Un conjunto de evaluaciones**: 8 tareas de prueba y una tabla de puntuación de 30 criterios, para saber cuándo falla el propio harness (arnés o marco de trabajo). Hasta ahora se han ejecutado dos de las tareas; consulta [Estado](#estado-qué-se-ha-probado).
 
@@ -38,7 +38,7 @@ El prompt es excelente y tiene un límite: es un solo prompt. En cuanto añades 
 |---|---|---|
 | **Saturación de restricciones** | El seguimiento fiable de instrucciones se viene abajo por encima de 5–6 restricciones simultáneas en una sola generación; en 15 modelos con k=8, cada restricción por separado se sigue cumpliendo ~41% de las veces, pero las ocho se cumplen a la vez solo el 5.7% de las veces ([Vasileva, arXiv:2608.12426](https://arxiv.org/abs/2608.12426); póster en un taller de ICML 2026) | Cada rol recibe solo los archivos de su paso (250–630 palabras cada uno); la estructura sale de plantillas, no de reglas mantenidas en el contexto |
 | **Las instrucciones negativas resultan contraproducentes** | Nombrar una palabra prohibida predispone al modelo a producirla; en los fallos, la señal de supresión es 4.4× más débil ([Rana, preprint de 2026](https://arxiv.org/abs/2601.08070); un solo modelo, Qwen2.5-7B-Instruct) | Las instrucciones son positivas: "incluye solo las secciones de la plantilla" en lugar de "no incluyas el análisis" |
-| **Sesgo de autopreferencia** | Los jueces LLM puntúan más alto el texto de baja perplejidad que los evaluadores humanos, sin importar quién lo haya escrito ([Wataoka et al., NeurIPS 2024 Safe Generative AI Workshop](https://arxiv.org/abs/2410.21819)) | El verificador solo ve requisitos, criterios, resultado y evidencias, y preferiblemente se ejecuta en otro modelo, que es lo que realmente cambia la perplejidad del juez |
+| **Sesgo de autopreferencia** | Los jueces LLM puntúan más alto el texto de baja perplejidad que los evaluadores humanos, sin importar quién lo haya escrito ([Wataoka et al., NeurIPS 2024 Safe Generative AI Workshop](https://arxiv.org/abs/2410.21819)) | El verificador solo ve objetivo, requisitos, criterios, resultado y evidencias, y preferiblemente se ejecuta en otro modelo, que es lo que realmente cambia la perplejidad del juez |
 
 Cada uno de estos hallazgos se apoya en un único estudio reciente, y aplicarlos a las instrucciones de agentes es una extrapolación propia del harness. El harness es un intento de que "sé más ambicioso" siga funcionando dentro de estos límites, y su conjunto de evaluaciones está ahí para mostrar dónde no lo consigue.
 
@@ -80,7 +80,7 @@ Una comprobación de entrada puede mostrar que 200 ms es alcanzable y que los us
 |---|---|---|
 | **Planificador** | tarea, contexto, modo, un archivo de escenario | un prompt de siete secciones con la comprobación de entrada dentro |
 | **Ejecutor** | el prompt, los materiales, el bloque "para el ejecutor" del escenario, sus archivos de instrucciones | el resultado y un registro de evidencias |
-| **Verificador** | las secciones 2 y 6 del prompt, el resultado, los materiales, el registro de evidencias | un veredicto: aceptar / aceptar con observaciones / rechazar |
+| **Verificador** | las secciones 1, 2, 4 y 6 del prompt, el resultado, los materiales, el registro de evidencias | un veredicto: aceptar / aceptar con observaciones / rechazar |
 
 El verificador no corrige. El ejecutor no se evalúa a sí mismo en lugar del verificador. El verificador se ejecuta preferiblemente en un **modelo distinto**: la verificación con el mismo modelo es parcial por construcción.
 
@@ -191,7 +191,7 @@ Para un solo proyecto, usa en su lugar `.claude/skills/be-ambitious-harness/` de
 1. Dale al planificador cuatro cosas: la **tarea**; el **contexto** (para quién es el resultado, materiales, plazo, requisitos obligatorios); el **modo**: `keep scope` (mantener el alcance), `ambitious extension` o `recommend` (recomendar), por defecto `recommend`; y **detenerse tras el análisis** (`yes` / `no`, por defecto `no`).
 2. Lee el análisis y las preguntas (≤3). Responde o acepta las suposiciones marcadas con `[...]`.
 3. Entrega el prompt a un ejecutor en una sesión nueva, junto con los materiales.
-4. Entrega las secciones 2 y 6, el resultado y el registro de evidencias a un verificador en otra sesión nueva.
+4. Entrega las secciones 1, 2, 4 y 6, el resultado y el registro de evidencias a un verificador en otra sesión nueva.
 5. Aplica `checklists/post-run.md`. Decide.
 
 **Así es la primera llamada** (Claude Code):
