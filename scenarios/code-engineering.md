@@ -24,7 +24,7 @@ Result — working code, a fix, feature, refactoring, infrastructure. Typical st
 ## For the worker
 
 - First artifact — a reproduction or profile, logged with command and output. Without it, the fix does not start.
-- The test is written before the fix and fails; command and output — into the log. After the fix it passes; output — into the log.
+- The test is written before the fix and fails, and passes after it; commands and outputs — into the log. Code changed before a failing test is reverted, not backfilled with a test after the fact.
 - Benchmark: same test bench, ≥5 runs, median and p95, cold and warm separately. Numbers without conditions — under "unverified".
 - Full test suite and linter — before hand-in; output — into the log.
 - Changes outside section 2 — a list with justification for each, or revert.

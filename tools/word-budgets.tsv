@@ -16,11 +16,11 @@ ru/SKILL.md	450
 ru/agents/planner.md	600
 ru/agents/verifier.md	250
 ru/agents/worker.md	300
-ru/checklists/post-run.md	300
+ru/checklists/post-run.md	350
 ru/checklists/pre-flight.md	350
 ru/core/gate.md	400
 ru/core/prompt-template.md	350
-ru/core/report-format.md	250
+ru/core/report-format.md	300
 ru/evals/scorecard.md	550
 ru/evals/tasks.md	800
 ru/scenarios/_index.md	300
@@ -35,11 +35,11 @@ SKILL.md	500
 agents/planner.md	650
 agents/verifier.md	300
 agents/worker.md	300
-checklists/post-run.md	350
+checklists/post-run.md	400
 checklists/pre-flight.md	400
 core/gate.md	450
 core/prompt-template.md	400
-core/report-format.md	250
+core/report-format.md	300
 evals/scorecard.md	600
 evals/tasks.md	900
 scenarios/_index.md	300

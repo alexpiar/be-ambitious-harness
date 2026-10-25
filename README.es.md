@@ -80,7 +80,7 @@ Una comprobación de entrada puede mostrar que 200 ms es alcanzable y que los us
 |---|---|---|
 | **Planificador** | tarea, contexto, modo, un archivo de escenario | un prompt de siete secciones con la comprobación de entrada dentro |
 | **Ejecutor** | el prompt, los materiales, el bloque "para el ejecutor" del escenario, sus archivos de instrucciones | el resultado y un registro de evidencias |
-| **Verificador** | las secciones 2 y 6 del prompt, el resultado, los materiales, el registro de evidencias | un veredicto: aceptar / aceptar con observaciones / rechazar |
+| **Verificador** | las secciones 1, 2, 4 y 6 del prompt, el resultado, los materiales, el registro de evidencias | un veredicto: aceptar / aceptar con observaciones / rechazar |
 
 El verificador no corrige. El ejecutor no se evalúa a sí mismo en lugar del verificador. El verificador se ejecuta preferiblemente en un **modelo distinto**: la verificación con el mismo modelo es parcial por construcción.
 
@@ -191,7 +191,7 @@ Para un solo proyecto, usa en su lugar `.claude/skills/be-ambitious-harness/` de
 1. Dale al planificador cuatro cosas: la **tarea**; el **contexto** (para quién es el resultado, materiales, plazo, requisitos obligatorios); el **modo**: `keep scope` (mantener el alcance), `ambitious extension` o `recommend` (recomendar), por defecto `recommend`; y **detenerse tras el análisis** (`yes` / `no`, por defecto `no`).
 2. Lee el análisis y las preguntas (≤3). Responde o acepta las suposiciones marcadas con `[...]`.
 3. Entrega el prompt a un ejecutor en una sesión nueva, junto con los materiales.
-4. Entrega las secciones 2 y 6, el resultado y el registro de evidencias a un verificador en otra sesión nueva.
+4. Entrega las secciones 1, 2, 4 y 6, el resultado y el registro de evidencias a un verificador en otra sesión nueva.
 5. Aplica `checklists/post-run.md`. Decide.
 
 **Así es la primera llamada** (Claude Code):

@@ -1,10 +1,10 @@
 # Post-run acceptance
 
-Run by the orchestrator once the worker report and verifier verdict exist. Result — a five-line report for the human per `core/report-format.md`.
+Run by the orchestrator once the worker report and verifier verdict exist. Result — a five-line report for the human per `core/report-format.md`. With "reject (stage 1)", the lines on criteria, falsification, goal and gaming do not apply.
 
 ## Process integrity
 
-- [ ] Worker did not get the planner's analysis; verifier did not get the worker's reasoning or sections 1, 3, 4, 5, 7.
+- [ ] Worker did not get the planner's analysis; verifier got only prompt sections 1, 2, 4, 6, without the worker's reasoning.
 - [ ] Verifier is a separate session; if the same model, this is noted in the report to the human.
 - [ ] If there was a gate check: GATE in the log precedes the first ambitious-branch action.
 - [ ] `tools/gate-check.py <prompt> <log> --strict` exited 0; otherwise its output goes in the report to the human.
@@ -16,6 +16,7 @@ Run by the orchestrator once the worker report and verifier verdict exist. Resul
 - [ ] Every section 6 criterion is measured by the verifier its own way or marked "cannot verify" with a reason.
 - [ ] Worker and verifier values per criterion are compared; mismatches listed.
 - [ ] Falsification test run; result recorded.
+- [ ] "GOAL CONFORMANCE" in the verdict — with evidence or a reason for "cannot verify".
 - [ ] Worker's and verifier's "unverified" lists merged; duplicates consolidated.
 
 ## Boundaries

@@ -36,13 +36,14 @@ One line per criterion, three values: yes / no / n/a. Filled in by the human or 
 
 | # | Criterion | Score |
 |---|---|---|
-| V1 | Received only sections 2 and 6, result, materials, log | |
+| V1 | Received only sections 1, 2, 4, 6, result, materials, log | |
 | V2 | Measured criteria its own way before comparing with the worker | |
 | V3 | Ran the falsification test | |
 | V4 | Checked for gaming the metric | |
-| V5 | Checked the GATE criterion against the prompt | |
+| V5 | Verdict shows the GATE criterion checked against section 4 and the `tools/gate-check.py` output | |
 | V6 | Did not fix the result; defects — line + suggestion | |
-| V7 | Violated requirement → "reject" | |
+| V7 | Violated requirement → "reject" at stage 1, without stage 2 | |
+| V8 | Goal conformance per section 1 — with evidence | |
 
 ## Orchestrator
 

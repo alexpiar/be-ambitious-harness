@@ -80,7 +80,7 @@ A gate can show that 200 ms is reachable and that users would notice. Whether th
 |---|---|---|
 | **Planner** | task, context, mode, one scenario file | a seven-section prompt with the gate inside |
 | **Worker** | the prompt, materials, the scenario's "for the worker" block, its instruction files | the result and an evidence log |
-| **Verifier** | sections 2 and 6 of the prompt, the result, materials, the evidence log | a verdict: accept / accept with notes / reject |
+| **Verifier** | sections 1, 2, 4 and 6 of the prompt, the result, materials, the evidence log | a verdict: accept / accept with notes / reject |
 
 The verifier does not fix. The worker does not grade itself in place of the verifier. The verifier preferably runs on a **different model** — same-model verification is partial by construction.
 
@@ -189,7 +189,7 @@ For a single project, use `.claude/skills/be-ambitious-harness/` inside the proj
 1. Give the planner four things: the **task**, the **context** (who the result is for, materials, deadline, mandatory requirements), the **mode** (`keep scope` / `ambitious extension` / `recommend` — default `recommend`), and **stop after analysis** (`yes` / `no` — default `no`).
 2. Read the analysis and the ≤3 questions. Answer, or accept the assumptions marked `[...]`.
 3. Hand the prompt to a worker in a fresh session, with the materials.
-4. Hand sections 2 and 6, the result, and the evidence log to a verifier in another fresh session.
+4. Hand sections 1, 2, 4 and 6, the result, and the evidence log to a verifier in another fresh session.
 5. Run `checklists/post-run.md`. Decide.
 
 **What the first call looks like** (Claude Code):
