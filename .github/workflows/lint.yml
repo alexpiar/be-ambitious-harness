@@ -1,0 +1,22 @@
+# Markdown lint for the harness: word budgets, paths, prompt sections,
+# ru/ vs root headings, evals badge. Rules: tools/lint-harness.py.
+name: lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-harness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Lint harness markdown
+        run: python3 -I tools/lint-harness.py

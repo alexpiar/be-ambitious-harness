@@ -1,0 +1,51 @@
+# Word budgets for harness markdown files, checked by tools/lint-harness.py.
+# Format: <path from the repository root><TAB><word limit>. Lines starting with # are comments.
+# Words = len(text.split()) in Python over the whole UTF-8 file (front matter, tables
+# and code blocks included): runs of non-whitespace between whitespace, the same as
+# `wc -w` in a UTF-8 locale. Under LC_ALL=C, `wc -w` does not split on Unicode spaces
+# such as NBSP and may count fewer; the linter's count is the one that counts.
+# Initial limits (v0.2, 2026-10-25): the count on that day rounded up to a multiple of 50.
+# Every harness file (SKILL.md, agents/, core/, scenarios/, checklists/, evals/ outside
+# evals/runs/, both in ru/ and in the root) needs a row; a row for a missing file is an error.
+#
+# Бюджеты слов для markdown-файлов харнесса; проверяет tools/lint-harness.py.
+# Слова = len(text.split()) в Python по всему файлу (как `wc -w`). Начальные лимиты —
+# число слов на 2026-10-25, округлённое вверх до кратного 50. Файл без строки — ошибка.
+
+ru/SKILL.md	450
+ru/agents/planner.md	600
+ru/agents/verifier.md	250
+ru/agents/worker.md	300
+ru/checklists/post-run.md	300
+ru/checklists/pre-flight.md	350
+ru/core/gate.md	400
+ru/core/prompt-template.md	350
+ru/core/report-format.md	250
+ru/evals/scorecard.md	550
+ru/evals/tasks.md	800
+ru/scenarios/_index.md	300
+ru/scenarios/code-engineering.md	600
+ru/scenarios/data-analysis.md	650
+ru/scenarios/decision-plan.md	650
+ru/scenarios/design-ux.md	600
+ru/scenarios/generic.md	400
+ru/scenarios/writing-research.md	650
+
+SKILL.md	500
+agents/planner.md	650
+agents/verifier.md	300
+agents/worker.md	300
+checklists/post-run.md	350
+checklists/pre-flight.md	400
+core/gate.md	450
+core/prompt-template.md	400
+core/report-format.md	250
+evals/scorecard.md	600
+evals/tasks.md	900
+scenarios/_index.md	300
+scenarios/code-engineering.md	700
+scenarios/data-analysis.md	750
+scenarios/decision-plan.md	750
+scenarios/design-ux.md	650
+scenarios/generic.md	450
+scenarios/writing-research.md	700
